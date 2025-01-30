@@ -26,7 +26,7 @@ function getRandomObject() {
     let altText = data[num].altText;
     let type = data[num].type;
     let source = data[num].source;
-    // console.log(path);
+    console.log(path);
     return { path, altText, type, source };
 }
 
