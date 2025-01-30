@@ -12,12 +12,8 @@ let button = document.querySelector("#userInputButton");
 button.onclick = function () {
     let text = document.querySelector("#userInput");
     console.log(text.value);
+    // document.getElementById("functionNarrator").innerHTML = "Sensory Description: " + imgVariables.functionB;
 }
-
-// let path;
-// let altText;
-// let type;
-// let origin;
 
 function getRandomObject() {
     const num = Math.floor(Math.random() * 37);
@@ -26,8 +22,9 @@ function getRandomObject() {
     let altText = data[num].altText;
     let type = data[num].type;
     let source = data[num].source;
+    let functionB = data[num].functionBot;
     console.log(path);
-    return { path, altText, type, source };
+    return { path, altText, type, source, functionB };
 }
 
 console.log(getRandomObject());
@@ -41,4 +38,6 @@ document.getElementById("randomAltText").innerHTML = "Original Alt-text: " + img
 document.getElementById("randomType").innerHTML = "Image Type: " + imgVariables.type;
 
 document.getElementById("randomSource").innerHTML = "Source: " + imgVariables.source;
+
+document.getElementById("functionNarrator").innerHTML = "Functional Description: " + imgVariables.functionB;
 
