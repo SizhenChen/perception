@@ -1,4 +1,38 @@
 #narrationDiv {
     position: absolute;
-    z-index: 1;
+    top: 0;
+    z-index: 2;
+    /* background-color: rgb(131, 145, 158); */
+}
+
+.speechBubble {
+	position: relative;
+	background: #a9c3c6;
+	border-radius: .4em;
+}
+
+.speechBubble:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-top-color: #a9c3c6;
+	border-bottom: 0;
+	margin-left: -25px;
+	margin-bottom: -25px;
+}
+
+#botsMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.366);
+    display: none;
+    align-items: center;
+    justify-content: center;
 }

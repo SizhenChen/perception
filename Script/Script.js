@@ -32,56 +32,87 @@ function getRandomObject() {
 
 console.log(getRandomObject());
 
-let imgVariables = getRandomObject();
+function switchImg() {
+    let imgVariables = getRandomObject();
 
-document.getElementById("randomImage").src = imgVariables.path;
+    document.getElementById("randomImage").src = imgVariables.path;
 
-document.getElementById("randomAltText").innerHTML = "Original Alt-text: " + imgVariables.altText;
+    document.getElementById("randomAltText").innerHTML = "Original Alt-text: " + imgVariables.altText;
 
-document.getElementById("randomType").innerHTML = "Image Type: " + imgVariables.type;
+    document.getElementById("randomType").innerHTML = "Image Type: " + imgVariables.type;
 
-document.getElementById("randomSource").innerHTML = "Source: " + imgVariables.source;
+    document.getElementById("randomSource").innerHTML = "Source: " + imgVariables.source;
 
-// Get the dropdown and the element to pop out
-const bots = document.getElementById("bots");
-const functionN = document.getElementById("functionN");
-const sensationN = document.getElementById("sensationN");
-const rationaleN = document.getElementById("rationaleN");
-const associationN = document.getElementById("associationN");
-const feelingN = document.getElementById("feelingN");
+    botsToImg(imgVariables);
+}
 
-functionN.innerHTML = "Functional Description: " + imgVariables.functionBot;
-sensationN.innerHTML = "Sensory Description: " + imgVariables.sensationBot;
-rationaleN.innerHTML = "Metaphysical Description: " + imgVariables.rationaleBot;
-associationN.innerHTML = "Association Description: " + imgVariables.associationBot;
-feelingN.innerHTML = "Emotional Description: " + imgVariables.feelingBot;
+function botsToImg(imgVariables) {
+    // Get the dropdown and the element to pop out
+    const bots = document.getElementById("bots");
+    const functionN = document.getElementById("functionN");
+    const sensationN = document.getElementById("sensationN");
+    const rationaleN = document.getElementById("rationaleN");
+    const associationN = document.getElementById("associationN");
+    const feelingN = document.getElementById("feelingN");
 
-sensationN.style.display = "none";
-rationaleN.style.display = "none";
-associationN.style.display = "none";
-feelingN.style.display = "none";
+    functionN.innerHTML = "Functional Description: " + imgVariables.functionBot;
+    sensationN.innerHTML = "Sensory Description: " + imgVariables.sensationBot;
+    rationaleN.innerHTML = "Metaphysical Description: " + imgVariables.rationaleBot;
+    associationN.innerHTML = "Association Description: " + imgVariables.associationBot;
+    feelingN.innerHTML = "Emotional Description: " + imgVariables.feelingBot;
 
-// Event listener for change in dropdown selection
-bots.addEventListener("change", function () {
-    // Object corresponding map dropdown values to n elements
-    const narrations = {
-        f: functionN,
-        s: sensationN,
-        r: rationaleN,
-        a: associationN,
-        fe: feelingN
-    };
+    sensationN.style.display = "none";
+    rationaleN.style.display = "none";
+    associationN.style.display = "none";
+    feelingN.style.display = "none";
 
-    // Hide all narrations
-    Object.values(narrations).forEach(el => el.style.display = "none");
+    let narrator = document.getElementById("narrator");
 
-    // Show the selected narration if it exists
-    const selectedNarration = narrations[bots.value];
-    if (selectedNarration) {
-        selectedNarration.style.display = "block";
-    }
+    // Event listener for change in dropdown selection
+    bots.addEventListener("change", function () {
+        // Object corresponding map dropdown values to n elements
+        const narrations = {
+            f: functionN,
+            s: sensationN,
+            r: rationaleN,
+            a: associationN,
+            fe: feelingN
+        };
+
+        // Hide all narrations
+        Object.values(narrations).forEach(el => el.style.display = "none");
+
+        // Show the selected narration if it exists
+        const selectedNarration = narrations[bots.value];
+        if (selectedNarration) {
+            selectedNarration.style.display = "block";
+        }
+
+        const imagePath = {
+            f: "/images/functionIMG.png",
+            s: "/images/sensationIMG.png",
+            r: "/images/rationaleIMG.png",
+            a: "/images/associationIMG.png",
+            fe: "/images/feelingIMG.png"
+        };
+
+        const selectedPath = imagePath[bots.value];
+        narrator.src = selectedPath;
+    });
+}
+
+switchImg();
+
+document.getElementById("showBotsMenu").addEventListener("click", function () {
+    document.getElementById("botsMenu").style.display = "flex";
 });
 
+document.getElementById("closeBotsMenu").addEventListener("click", function () {
+    document.getElementById("botsMenu").style.display = "none";
+});
 
+document.getElementById("switchImg").addEventListener("click", function () {
+    switchImg();
+});
 
 
