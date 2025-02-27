@@ -10,6 +10,7 @@ function appendImgs() {
         let path = data[num].path;
         // console.log(path);
         const img = document.createElement("img");
+        img.setAttribute("data-source", data[num].source);
         img.src = path;
         img.id = `image${num}`;
         img.classList.add(data[num].type);
@@ -32,6 +33,20 @@ function hideImgs(listOfImgs) {
         listOfImgs[i].classList.add("hide");
     }
 }
+
+function updateSources() {
+    const sourceSelector = document.querySelector("#sourceSelector");
+    sourceSelector.innerHTML = '<option value="None">None</option>';//Reset the sourceSelector to only have one option "None"
+    const Imgs = document.querySelectorAll("img:not(.hide)"); //Any of the imgs that don't have this class
+    for (let i = 0; i < Imgs.length; i++) {
+        const option = document.createElement("option"); //creates a new option
+        option.setAttribute("value", Imgs[i].getAttribute("data-source")); //option's value is set as the image's source
+        option.innerHTML = Imgs[i].getAttribute("data-source");
+        sourceSelector.append(option); //append the created option inside the sourceSelector
+    }
+}
+
+// updateSources();
 
 let typeSelector = document.querySelector("#typeSelector");
 
@@ -56,5 +71,7 @@ typeSelector.onclick = function () {
         hideImgs(allImgs);
         showImgs(typeSelected);
     };
+
+    updateSources();
 };
 
