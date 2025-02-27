@@ -1,12 +1,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
-// d3.csv("Script/imageData.csv",(d)=>{
-//     console.log(d);
-//     data = d;
-// });
-
 const data = await d3.csv("Script/imageData.csv");
-console.log(data[0].Origin);
+console.log(data[0].path);
 
 let button = document.querySelector("#userInputButton");
 button.onclick = function () {
