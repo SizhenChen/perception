@@ -106,7 +106,7 @@
 	text-align: center;
 	mix-blend-mode: hard-light;
 	/* Hide speech bubble by default */
-	opacity: 0.5;
+	opacity: 1;
 	transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -127,7 +127,7 @@
 
 /* Show speech bubble when hovering over bot container */
 .botContainer:hover .speechBubble {
-	opacity: 1;
+	background: radial-gradient(circle, rgb(111, 0, 255), rgb(0, 255, 221));
 	visibility: visible;
 }
 
