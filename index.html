@@ -9,18 +9,25 @@
 </head>
 
 <body>
+    <div id="randomText">
+        <div id="randomType"></div>
+        <div id="randomSource"></div>
+        <div id="randomAltText"></div>
+    </div>
     <img id="randomImage" src="">
-    <button id="switchImg" style="display: block;">Click to Switch Image</button>
-    <div id="randomAltText"></div>
-    <div id="randomType"></div>
-    <div id="randomSource"></div>
+
+    <div style="display: flex; align-items: center; gap: 5px;">
+        <a class="buttonStyle" id="imgIndex" href="/images.html">Images Index</a>
+        <button class="buttonStyle" id="switchImg" style="display: block;">Click to Switch Image</button>
+    </div>
+    <div style="display: flex; align-items: center; gap: 5px; position: fixed; top:10px; right: 10px;">
+        <input type="text" id="userInput">
+        <button class="buttonStyle" id="userInputButton">Input Your Own Description</button>
+    </div>
     <!-- Need to build JSON file to store the original alt text and place them automatically here. -->
-    <input type="text" id="userInput">
-    <button id="userInputButton">Input Your Own Description</button>
-    <a href="/images.html">Images Index</a>
 
     <div id="narrationDiv">
-        <div id="botsMenu">
+        <div id="botsMenu" style="gap: 10px;">
             <label for="bots">Choose a narrator:</label>
 
             <select name="bots" id="bots">
@@ -30,19 +37,20 @@
                 <option value="a">Association Bot</option>
                 <option value="fe">Feeling Bot</option>
             </select>
-            <button id="closeBotsMenu" style="display: block;">Close Bots Menu</button>
+
+            <button class="buttonStyle" id="closeBotsMenu" style="display: block;">Close Bots Menu</button>
         </div>
 
-        <div>
-                <div id="functionN" class="speechBubble"></div>
-                <div id="sensationN" class="speechBubble"></div>
-                <div id="rationaleN" class="speechBubble"></div>
-                <div id="associationN" class="speechBubble"></div>
-                <div id="feelingN" class="speechBubble"></div>
+        <div class="botContainer">
+            <div id="functionN" class="speechBubble"></div>
+            <div id="sensationN" class="speechBubble"></div>
+            <div id="rationaleN" class="speechBubble"></div>
+            <div id="associationN" class="speechBubble"></div>
+            <div id="feelingN" class="speechBubble"></div>
 
-                <img src=" /images/functionIMG.png" id="narrator" width="200px">
-
-                <button id="showBotsMenu" style="display: block;">Show Bots Menu</button>
+            <button id="showBotsMenu" style="display: block;">
+                <img src=" /images/functionIMG.png" id="botNarrator" width="200px">
+            </button>
         </div>
 
     </div>

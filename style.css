@@ -1,28 +1,124 @@
+body{
+	background-color: black;
+}
+
 #narrationDiv {
-    position: absolute;
-    top: 0;
     z-index: 2;
-    /* background-color: rgb(131, 145, 158); */
+	position: fixed; /* Sticks to the screen */
+    bottom: 0;
+    right: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.buttonStyle {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    text-decoration: none; /* Removes underline */
+    border-radius: 10em; /* Rounded corners */
+	border: none;
+    font-size: 14px;
+    font-family: sans-serif;
+    transition: background 0.3s;
+	mix-blend-mode: hard-light;
+}
+
+.buttonStyle:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#switchImg{
+	font-weight: bold;
+}
+
+#imgIndex{
+	display: flex;
+}
+
+#randomText {
+    z-index: 3; /* These elements will appear above the image */
+    color:  #007bff;
+    padding: 1px;
+    font-size: 16px;
+    position: fixed;
+	bottom: 10px;
+	width: 60vw;
+}
+
+#randomImage{
+	height: 100vh; /* Full screen height */
+    width: auto;   /* Maintain aspect ratio */
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the image */
+    object-fit: contain; /* Ensures the whole image fits without cropping */
+}
+
+#userInput {
+    width: 200px; /* Set width */
+    height: 16px; /* Set height */
+    padding: 10px; /* Add space inside */
+    font-size: 16px; /* Make text readable */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 10em; /* Rounded corners */
+    outline: none; /* Remove default outline */
+    transition: border 0.3s; /* Smooth border change */
+	color: #007bff;
+	mix-blend-mode: hard-light;
+}
+
+#userInput:focus {
+    border-color: #007bff; /* Blue border on focus */
 }
 
 .speechBubble {
-	position: relative;
-	background: #a9c3c6;
-	border-radius: .4em;
+    position: relative;
+    padding: 30px 30px;
+    font-size: 16px; /* Make text readable */
+    border: none;
+	width: 250px;
+    border-radius: 5em; /* Rounded corners for bubble */
+    outline: none; /* Remove default outline */
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.8), rgba(0, 255, 255, 0.4));
+    color: white;
+    text-align: center;
+	mix-blend-mode: hard-light;
+	/* Hide speech bubble by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
 }
 
+/* Triangle for speech bubble tail */
 .speechBubble:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 25px solid transparent;
-	border-top-color: #a9c3c6;
-	border-bottom: 0;
-	margin-left: -25px;
-	margin-bottom: -25px;
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: rgba(0, 187, 255, 0.4); /* Matching color for tail */
+    border-bottom: 0;
+    margin-left: -18px;
+}
+
+/* Show speech bubble when hovering over bot container */
+.botContainer:hover .speechBubble {
+    opacity: 1;
+    visibility: visible;
+}
+
+.botContainer {
+    display: flex;
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    gap: 10px; /* Space between elements */
 }
 
 #botsMenu {
@@ -35,4 +131,12 @@
     display: none;
     align-items: center;
     justify-content: center;
+}
+
+#showBotsMenu{
+	border: none; /* Remove default button border */
+    padding: 0; /* Remove default padding */
+    background: transparent; /* Remove background */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    display: inline-block; /* Make the button fit the image size */
 }

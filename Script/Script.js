@@ -36,7 +36,7 @@ function switchImg() {
 
     document.getElementById("randomType").innerHTML = "Image Type: " + imgVariables.type;
 
-    document.getElementById("randomSource").innerHTML = "Source: " + imgVariables.source;
+    document.getElementById("randomSource").innerHTML = "On-line Source: " + imgVariables.source;
 
     botsToImg(imgVariables);
 }
@@ -50,18 +50,18 @@ function botsToImg(imgVariables) {
     const associationN = document.getElementById("associationN");
     const feelingN = document.getElementById("feelingN");
 
-    functionN.innerHTML = "Functional Description: " + imgVariables.functionBot;
-    sensationN.innerHTML = "Sensory Description: " + imgVariables.sensationBot;
-    rationaleN.innerHTML = "Metaphysical Description: " + imgVariables.rationaleBot;
-    associationN.innerHTML = "Association Description: " + imgVariables.associationBot;
-    feelingN.innerHTML = "Emotional Description: " + imgVariables.feelingBot;
+    functionN.innerHTML = "" + imgVariables.functionBot;
+    sensationN.innerHTML = "" + imgVariables.sensationBot;
+    rationaleN.innerHTML = "" + imgVariables.rationaleBot;
+    associationN.innerHTML = "" + imgVariables.associationBot;
+    feelingN.innerHTML = "" + imgVariables.feelingBot;
 
     sensationN.style.display = "none";
     rationaleN.style.display = "none";
     associationN.style.display = "none";
     feelingN.style.display = "none";
 
-    let narrator = document.getElementById("narrator");
+    let narrator = document.getElementById("botNarrator");
 
     // Event listener for change in dropdown selection
     bots.addEventListener("change", function () {
