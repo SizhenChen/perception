@@ -1,5 +1,14 @@
-body {
-	
+.video-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/* Make video fill entire width */
+	height: 100%;
+	object-fit: cover;
+	/* Ensures video covers the entire background */
+	z-index: -1;
+	/* Sends the video behind other elements */
 }
 
 #narrationDiv {
@@ -71,7 +80,7 @@ body {
 	height: 16px;
 	padding: 10px;
 	font-size: 16px;
-	border: none;
+	border: 2px solid #3498db;
 	border-radius: 10em;
 	outline: none;
 	transition: border 0.3s;
