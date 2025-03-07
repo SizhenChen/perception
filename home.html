@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <style>
         /* Set body and html height to 100% */
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             display: flex;
@@ -23,17 +26,46 @@
             top: 0;
             left: 0;
             width: 100vw;
-            object-fit: cover; /* Ensures video covers the entire background */
-            z-index: -1; /* Sends the video behind other elements */
+            object-fit: cover;
+            /* Ensures video covers the entire background */
+            z-index: -1;
+            /* Sends the video behind other elements */
+        }
+
+        .buttonStyle {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 10em;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+            transition: background 0.3s;
+            mix-blend-mode: hard-light;
+        }
+
+        #Index {
+            z-index: 2;
+            position: fixed;
+            /* Sticks to the screen */
+            bottom: 20px;
+            right: 20px;
         }
     </style>
-</head>
-<body>
+    </head>
 
-    <!-- Video element as background -->
-    <video class="video-background" autoplay muted loop>
-        <source src="homePage.mp4" type="video/mp4">
-    </video>
+    <body>
 
-</body>
+        <!-- Video element as background -->
+        <video class="video-background" autoplay muted loop>
+            <source src="homePage.mp4" type="video/mp4">
+        </video>
+
+        <a class="buttonStyle" id="Index" href="/Index.html">Enter</a>
+
+    </body>
+
 </html>

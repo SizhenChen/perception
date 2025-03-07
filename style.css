@@ -106,8 +106,7 @@
 	text-align: center;
 	mix-blend-mode: hard-light;
 	/* Hide speech bubble by default */
-	opacity: 0;
-	visibility: hidden;
+	opacity: 0.5;
 	transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
