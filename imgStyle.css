@@ -9,7 +9,7 @@
     height: 150px;
     object-fit: cover; /* Maintain aspect ratio */
     border-radius: 8px;
-    border: 2px solid #ccc;
+    border: none;
 }
 
 .hide{
