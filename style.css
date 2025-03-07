@@ -1,5 +1,5 @@
 body {
-	background-color: black;
+	
 }
 
 #narrationDiv {
@@ -48,6 +48,7 @@ body {
 	position: fixed;
 	bottom: 10px;
 	width: 60vw;
+	mix-blend-mode: hard-light;
 }
 
 #randomImage {
