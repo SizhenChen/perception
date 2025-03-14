@@ -84,11 +84,11 @@ function botsToImg(imgVariables) {
         }
 
         const imagePath = {
-            f: "/images/functionIMG.png",
-            s: "/images/sensationIMG.png",
-            r: "/images/rationaleIMG.png",
-            a: "/images/associationIMG.png",
-            fe: "/images/feelingIMG.png"
+            f: "/images/functionGIF.gif",
+            s: "/images/sensationGIF.gif",
+            r: "/images/rationaleGIF.gif",
+            a: "/images/associationGIF.gif",
+            fe: "/images/feelingGIF.gif"
         };
 
         const selectedPath = imagePath[bots.value];
