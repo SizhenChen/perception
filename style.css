@@ -112,9 +112,6 @@
 	color: white;
 	text-align: center;
 	mix-blend-mode: hard-light;
-	/* Hide speech bubble by default */
-	opacity: 1;
-	transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 /* Triangle for speech bubble tail */
@@ -136,6 +133,14 @@
 .botContainer:hover .speechBubble {
 	background: radial-gradient(circle, rgb(111, 0, 255), rgb(0, 255, 221));
 	visibility: visible;
+}
+
+#botNarrator{
+	transition: filter 0.3s;
+}
+
+#botNarrator:hover{
+	filter: opacity(0.8) contrast(1.3);
 }
 
 .botContainer {
