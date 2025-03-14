@@ -1,16 +1,3 @@
-.video-background {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	/* Make video fill entire width */
-	height: 100%;
-	object-fit: cover;
-	/* Ensures video covers the entire background */
-	z-index: -1;
-	/* Sends the video behind other elements */
-}
-
 #narrationDiv {
 	z-index: 2;
 	position: fixed;
@@ -45,7 +32,27 @@
 }
 
 #imgIndex {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	width: 30px; /* Adjust size as needed */
+	height: 30px;
+	gap: 2px; /* Space between squares */
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+#imgIndex div {
+	width: 100%;
+	height: 100%;
+	background: #000; /* Black squares */
+	transition: background 0.3s;
+}
+
+/* Hover effect */
+#imgIndex:hover div {
+	background: #6b6b6b; /* Slightly lighter color on hover */
 }
 
 #randomText {
