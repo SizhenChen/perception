@@ -105,8 +105,8 @@
 
 .speechBubble {
 	display: inline-block;
-    max-width: 200px;
-    padding: 20px 20px;
+    max-width: 190px;
+    padding: 20px 30px;
     background: radial-gradient(circle at 50% -100%, #65ceff 55%, #e0fbff 84%);
     color: black;
     font-size: 16px;
@@ -115,7 +115,7 @@
     position: relative;
     font-family: sans-serif;
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
-    border: 1px solid #4084bf;
+    /* border: 1px solid #4084bf; */
 	margin-bottom: 20px;
 }
 
@@ -136,13 +136,14 @@
 	content: "";
     position: absolute;
 	bottom: -20px;
-	left: 50%;
+	left: 80%;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
 	border-top-color: #e0fbff;
 	/* Matching color for tail */
 	border-bottom: 0;
+	border-right: 0;
 	margin-left: -18px;
 }
 
