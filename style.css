@@ -2,8 +2,8 @@
 	z-index: 2;
 	position: fixed;
 	/* Sticks to the screen */
-	bottom: 0;
-	right: 10px;
+	bottom: 10px;
+	right: 50px;
 	display: flex;
 	align-items: center;
 }
@@ -28,7 +28,9 @@
 }
 
 #switchImg {
-	font-weight: bold;
+	background: none;
+    border: none;
+	display: contents;
 }
 
 #imgIndex {
@@ -80,6 +82,7 @@
 	/* Center the image */
 	object-fit: contain;
 	/* Ensures the whole image fits without cropping */
+	cursor: pointer;
 }
 
 #userInput {
@@ -101,29 +104,43 @@
 }
 
 .speechBubble {
-	position: relative;
-	padding: 30px 30px;
-	font-size: 16px;
-	border: none;
-	width: 250px;
-	border-radius: 5em;
-	outline: none;
-	background: radial-gradient(circle, rgba(0, 123, 255), rgba(0, 255, 255));
-	color: white;
+	display: inline-block;
+    max-width: 200px;
+    padding: 20px 20px;
+    background: radial-gradient(circle at 50% -100%, #65ceff 55%, #e0fbff 84%);
+    color: black;
+    font-size: 16px;
 	text-align: center;
-	mix-blend-mode: hard-light;
+    border-radius: 40px;
+    position: relative;
+    font-family: sans-serif;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #4084bf;
+	margin-bottom: 20px;
 }
+
+.speechBubble::before {
+    content: "";
+    position: absolute;
+    top: 20%; /* Move to vertical center */
+    left: 50%; /* Move to horizontal center */
+    width: 70%; /* Adjust for highlight width */
+    height: 40%; /* Adjust for highlight height */
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 30px; /* Smooth rounded edges */
+    transform: translate(-50%, -50%); /* Center it precisely */
+  }
 
 /* Triangle for speech bubble tail */
 .speechBubble:after {
-	content: '';
-	position: absolute;
+	content: "";
+    position: absolute;
 	bottom: -20px;
 	left: 50%;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-top-color: rgba(0, 187, 255);
+	border-top-color: #e0fbff;
 	/* Matching color for tail */
 	border-bottom: 0;
 	margin-left: -18px;
@@ -131,7 +148,7 @@
 
 /* Show speech bubble when hovering over bot container */
 .botContainer:hover .speechBubble {
-	background: radial-gradient(circle, rgb(111, 0, 255), rgb(0, 255, 221));
+	background: radial-gradient(circle at 50% -100%, #92ddff 55%, #f7feff 84%);
 	visibility: visible;
 }
 
