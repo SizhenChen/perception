@@ -1,5 +1,6 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
+// Importing D3.js and Loading CSV Data
 const data = await d3.csv("Script/imageData.csv");
 console.log(data[0].path);
 
@@ -9,6 +10,7 @@ button.onclick = function () {
     console.log(text.value);
 }
 
+//Picking a Random Image from the CSV
 function getRandomObject() {
     const num = Math.floor(Math.random() * 37);
     // console.log(num);
@@ -27,6 +29,7 @@ function getRandomObject() {
 
 console.log(getRandomObject());
 
+//Switching the Image and Updating Metadata
 function switchImg() {
     let imgVariables = getRandomObject();
 
@@ -41,6 +44,7 @@ function switchImg() {
     botsToImg(imgVariables);
 }
 
+//Handling Bot Responses Based on Dropdown Selection
 function botsToImg(imgVariables) {
     // Get the dropdown and the element to pop out
     const bots = document.getElementById("bots");
@@ -96,8 +100,10 @@ function botsToImg(imgVariables) {
     });
 }
 
+//Auto-Switch Image on Load
 switchImg();
 
+//Handling UI Interactions (Menu Toggle & Image Switching)
 document.getElementById("showBotsMenu").addEventListener("click", function () {
     document.getElementById("botsMenu").style.display = "flex";
 });
