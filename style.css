@@ -1,13 +1,3 @@
-#narrationDiv {
-	z-index: 2;
-	position: fixed;
-	/* Sticks to the screen */
-	bottom: 10px;
-	right: 50px;
-	display: flex;
-	align-items: center;
-}
-
 .buttonStyle {
 	display: inline-block;
 	padding: 8px 18px;
@@ -29,7 +19,7 @@
 
 #switchImg {
 	background: none;
-    border: none;
+	border: none;
 	display: contents;
 }
 
@@ -37,9 +27,11 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
-	width: 30px; /* Adjust size as needed */
+	width: 30px;
+	/* Adjust size as needed */
 	height: 30px;
-	gap: 2px; /* Space between squares */
+	gap: 2px;
+	/* Space between squares */
 	border: none;
 	background: transparent;
 	cursor: pointer;
@@ -48,13 +40,15 @@
 #imgIndex div {
 	width: 100%;
 	height: 100%;
-	background: #000; /* Black squares */
+	background: #000;
+	/* Black squares */
 	transition: background 0.3s;
 }
 
 /* Hover effect */
 #imgIndex:hover div {
-	background: #6b6b6b; /* Slightly lighter color on hover */
+	background: #6b6b6b;
+	/* Slightly lighter color on hover */
 }
 
 #randomText {
@@ -78,11 +72,13 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) scale(0.8);
 	/* Center the image */
 	object-fit: contain;
 	/* Ensures the whole image fits without cropping */
 	cursor: pointer;
+	border-radius: 20px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
 }
 
 #userInput {
@@ -103,44 +99,57 @@
 	/* Blue border on focus */
 }
 
-.speechBubble {
-	display: inline-block;
-    max-width: 190px;
-    padding: 20px 30px;
-    background: radial-gradient(circle at 50% -100%, #65ceff 55%, #e0fbff 84%);
-    color: black;
-    font-size: 16px;
-	text-align: center;
-    border-radius: 40px;
-    position: relative;
-    font-family: sans-serif;
-    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.2);
-    /* border: 1px solid #4084bf; */
-	margin-bottom: 20px;
+#narrationDiv {
+	z-index: 2;
+	position: fixed;
+	/* Sticks to the screen */
+	width: 100vw;
+	/* Stretches across the screen */
+	bottom: 10px;
+	/* Position near the bottom */
+	left: 0;
+	/* Ensures it starts from the left edge */
+	display: flex;
+	justify-content: center;
+	/* Centers content horizontally */
+	align-items: center;
+	/* Centers content vertically inside */
+	padding: 10px 0;
+	/* Adds some space inside */
 }
 
-.speechBubble::before {
-    content: "";
-    position: absolute;
-    top: 20%; /* Move to vertical center */
-    left: 50%; /* Move to horizontal center */
-    width: 70%; /* Adjust for highlight width */
-    height: 40%; /* Adjust for highlight height */
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 30px; /* Smooth rounded edges */
-    transform: translate(-50%, -50%); /* Center it precisely */
-  }
+.speechBubble {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 90vw;
+	/* Stretches almost the full width */
+	max-width: 100%;
+	/* Prevents overflow */
+	padding: 20px;
+	margin: 20px auto;
+	background: rgba(0, 0, 0);
+	color: rgb(255, 255, 255);
+	font-size: 18px;
+	border-radius: 0px;
+	position: relative;
+	font-family: sans-serif;
+	mix-blend-mode: multiply;
+	visibility: hidden;
+}
+
 
 /* Triangle for speech bubble tail */
 .speechBubble:after {
 	content: "";
-    position: absolute;
+	position: absolute;
 	bottom: -20px;
-	left: 80%;
+	left: 90%;
 	width: 0;
 	height: 0;
 	border: 20px solid transparent;
-	border-top-color: #e0fbff;
+	border-top-color: rgba(0, 0, 0);
 	/* Matching color for tail */
 	border-bottom: 0;
 	border-right: 0;
@@ -149,26 +158,25 @@
 
 /* Show speech bubble when hovering over bot container */
 .botContainer:hover .speechBubble {
-	background: radial-gradient(circle at 50% -100%, #92ddff 55%, #f7feff 84%);
+	mix-blend-mode: hard-light;
 	visibility: visible;
 }
 
-#botNarrator{
+#botNarrator {
 	transition: filter 0.3s;
 }
 
-#botNarrator:hover{
+#botNarrator:hover {
 	filter: opacity(0.8) contrast(1.3);
 }
 
 .botContainer {
 	display: flex;
 	flex-direction: column;
-	/* Stack the elements vertically */
-	align-items: center;
-	/* Center items horizontally */
-	justify-content: center;
-	/* Center items vertically */
+	align-items: flex-end;
+	/* Aligns content to the right */
+	justify-content: flex-end;
+	/* Aligns vertically if necessary */
 	gap: 10px;
 	/* Space between elements */
 }
