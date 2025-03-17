@@ -36,16 +36,38 @@ function switchImg() {
 
     document.getElementById("randomImage").src = imgVariables.path;
 
-    document.getElementById("randomAltText").innerHTML = "Original Alt-text: " + imgVariables.altText;
+    //Update metadata using data-attributes
+    let randomAltText = document.getElementById("randomAltText");
+    let randomType = document.getElementById("randomType");
+    let randomSource = document.getElementById("randomSource");
 
-    document.getElementById("randomType").innerHTML = "Image Type: " + imgVariables.type;
+    // Store the actual values in data attributes
+    randomAltText.setAttribute("data-alt", imgVariables.altText);
+    randomType.setAttribute("data-type", imgVariables.type);
+    randomSource.setAttribute("data-source", imgVariables.source);
 
-    document.getElementById("randomSource").innerHTML = "On-line Source: " + imgVariables.source;
+    // Reset button text
+    randomAltText.innerHTML = "Alt-text";
+    randomType.innerHTML = "Image Type";
+    randomSource.innerHTML = "On-line Source";
+
 
     document.getElementById("botNarrator").src = "/images/functionGIF.gif";
 
     botsToImg(imgVariables);
 }
+
+document.getElementById("randomAltText").addEventListener("click", function () {
+    this.innerHTML = (this.innerHTML === "Alt-text") ? this.getAttribute("data-alt") : "Alt-text";
+});
+
+document.getElementById("randomType").addEventListener("click", function () {
+    this.innerHTML = (this.innerHTML === "Image Type") ? this.getAttribute("data-type") : "Image Type";
+});
+
+document.getElementById("randomSource").addEventListener("click", function () {
+    this.innerHTML = (this.innerHTML === "On-line Source") ? this.getAttribute("data-source") : "On-line Source";
+});
 
 //Handling Bot Responses Based on Dropdown Selection
 function botsToImg(imgVariables) {
@@ -144,6 +166,7 @@ document.getElementById("switchImg").addEventListener("click", function () {
     switchImg();
 });
 
+//hide all image info within info button and make a toggle effect to show and hide them
 let randomText = document.querySelectorAll(".randomText");
 
 console.log(randomText);
