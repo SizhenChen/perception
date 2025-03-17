@@ -1,14 +1,15 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+// import Typewriter from './node_modules/typewriter-effect/dist/core.js';
 
 // Importing D3.js and Loading CSV Data
 const data = await d3.csv("Script/imageData.csv");
 console.log(data[0].path);
 
-let button = document.querySelector("#userInputButton");
-button.onclick = function () {
-    let text = document.querySelector("#userInput");
-    console.log(text.value);
-}
+// let button = document.querySelector("#userInputButton");
+// button.onclick = function () {
+//     let text = document.querySelector("#userInput");
+//     console.log(text.value);
+// }
 
 //Picking a Random Image from the CSV
 function getRandomObject() {
@@ -41,6 +42,8 @@ function switchImg() {
 
     document.getElementById("randomSource").innerHTML = "On-line Source: " + imgVariables.source;
 
+    document.getElementById("botNarrator").src = "/images/functionGIF.gif";
+    
     botsToImg(imgVariables);
 }
 
@@ -54,6 +57,7 @@ function botsToImg(imgVariables) {
     const associationN = document.getElementById("associationN");
     const feelingN = document.getElementById("feelingN");
 
+    //Text inside the speech bubble
     functionN.innerHTML = "" + imgVariables.functionBot;
     sensationN.innerHTML = "" + imgVariables.sensationBot;
     rationaleN.innerHTML = "" + imgVariables.rationaleBot;
@@ -64,6 +68,18 @@ function botsToImg(imgVariables) {
     rationaleN.style.display = "none";
     associationN.style.display = "none";
     feelingN.style.display = "none";
+
+    var textToType = functionN.innerText;
+
+    console.log(textToType);
+
+    var typewriter = new Typewriter(functionN, {
+        delay: 50,
+    });
+
+    typewriter
+        .typeString(textToType) // Get text content inside the element
+        .start();
 
     let narrator = document.getElementById("botNarrator");
 
@@ -97,6 +113,18 @@ function botsToImg(imgVariables) {
 
         const selectedPath = imagePath[bots.value];
         narrator.src = selectedPath;
+
+        var textToType = selectedNarration.innerText;
+
+        console.log(textToType);
+
+        var typewriter = new Typewriter(selectedNarration, {
+            delay: 75,
+        });
+
+        typewriter
+            .typeString(textToType) // Get text content inside the element
+            .start();
     });
 }
 
