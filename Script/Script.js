@@ -54,7 +54,21 @@ function switchImg() {
 
     document.getElementById("botNarrator").src = "/images/functionGIF.gif";
 
-    botsToImg(imgVariables);
+    // Store bot narrations using data-attributes(Get text in the speech bubble)
+    let botsDropdown = document.getElementById("bots");
+    botsDropdown.setAttribute("data-f", imgVariables.functionBot);
+    botsDropdown.setAttribute("data-s", imgVariables.sensationBot);
+    botsDropdown.setAttribute("data-r", imgVariables.rationaleBot);
+    botsDropdown.setAttribute("data-a", imgVariables.associationBot);
+    botsDropdown.setAttribute("data-fe", imgVariables.feelingBot);
+
+
+    // 🔥 Delay the function call to ensure attributes are set first
+    setTimeout(() => {
+        botsToImg();
+        botsDropdown.dispatchEvent(new Event("change"));
+    }, 100);
+    // botsToImg(imgVariables);
 }
 
 document.getElementById("randomAltText").addEventListener("click", function () {
@@ -70,7 +84,7 @@ document.getElementById("randomSource").addEventListener("click", function () {
 });
 
 //Handling Bot Responses Based on Dropdown Selection
-function botsToImg(imgVariables) {
+function botsToImg() {
     // Get the dropdown and the element to pop out
     const bots = document.getElementById("bots");
     const functionN = document.getElementById("functionN");
@@ -79,52 +93,62 @@ function botsToImg(imgVariables) {
     const associationN = document.getElementById("associationN");
     const feelingN = document.getElementById("feelingN");
 
-    //Text inside the speech bubble
-    functionN.innerHTML = "" + imgVariables.functionBot;
-    sensationN.innerHTML = "" + imgVariables.sensationBot;
-    rationaleN.innerHTML = "" + imgVariables.rationaleBot;
-    associationN.innerHTML = "" + imgVariables.associationBot;
-    feelingN.innerHTML = "" + imgVariables.feelingBot;
+    const narrations = {
+        f: functionN,
+        s: sensationN,
+        r: rationaleN,
+        a: associationN,
+        fe: feelingN
+    };
 
-    sensationN.style.display = "none";
-    rationaleN.style.display = "none";
-    associationN.style.display = "none";
-    feelingN.style.display = "none";
+    // Ensures that no previous bot narration is visible before a new one is selected.
+    // Prevents old text from staying on screen when switching between dropdown options.
+    // Resets the text before setting a new narration.
+    function updateNarration() {
+        console.log("Dropdown changed to:", bots.value);
 
-    var textToType = functionN.innerText;
+        Object.values(narrations).forEach(el => {
+            el.style.display = "none";
+            el.innerHTML = "";
+        });
 
-    console.log(textToType);
 
-    var typewriter = new Typewriter(functionN, {
-        delay: 50,
-    });
+        console.log([bots.value]);
 
-    typewriter
-        .typeString(textToType) // Get text content inside the element
-        .start();
-
-    let narrator = document.getElementById("botNarrator");
-
-    // Event listener for change in dropdown selection
-    bots.addEventListener("change", function () {
-        // Object corresponding map dropdown values to n elements
-        const narrations = {
-            f: functionN,
-            s: sensationN,
-            r: rationaleN,
-            a: associationN,
-            fe: feelingN
-        };
-
-        // Hide all narrations
-        Object.values(narrations).forEach(el => el.style.display = "none");
-
-        // Show the selected narration if it exists
+        //bots.value:f/s/r/a/fe
         const selectedNarration = narrations[bots.value];
         if (selectedNarration) {
+            const botText = bots.getAttribute(`data-${bots.value}`);
+            //check if bot text is received
+            console.log("Checking data-* attributes:", {
+                function: bots.getAttribute("data-f"),
+                sensation: bots.getAttribute("data-s"),
+                rationale: bots.getAttribute("data-r"),
+                association: bots.getAttribute("data-a"),
+                feeling: bots.getAttribute("data-fe"),
+            });
+
+            console.log("Bot text for selected option:", botText);
+
             selectedNarration.style.display = "block";
+            selectedNarration.innerHTML = botText;
+
+            var textToType = selectedNarration.innerText;
+
+            console.log(textToType);
+
+            var typewriter = new Typewriter(selectedNarration, {
+                delay: 75,
+            });
+
+            typewriter
+                .typeString(textToType) // Get text content inside the element
+                .start();
         }
 
+        let narrator = document.getElementById("botNarrator");
+
+        //bot GIF changes correspondingly
         const imagePath = {
             f: "/images/functionGIF.gif",
             s: "/images/sensationGIF.gif",
@@ -135,20 +159,95 @@ function botsToImg(imgVariables) {
 
         const selectedPath = imagePath[bots.value];
         narrator.src = selectedPath;
+    }
 
-        var textToType = selectedNarration.innerText;
-
-        console.log(textToType);
-
-        var typewriter = new Typewriter(selectedNarration, {
-            delay: 75,
-        });
-
-        typewriter
-            .typeString(textToType) // Get text content inside the element
-            .start();
-    });
+    //Ensures the correct bot text appears for the selected dropdown option immediately.
+    bots.addEventListener("change", updateNarration);
+    updateNarration();
 }
+
+// //Handling Bot Responses Based on Dropdown Selection
+// function botsToImg(imgVariables) {
+//     // Get the dropdown and the element to pop out
+//     const bots = document.getElementById("bots");
+//     const functionN = document.getElementById("functionN");
+//     const sensationN = document.getElementById("sensationN");
+//     const rationaleN = document.getElementById("rationaleN");
+//     const associationN = document.getElementById("associationN");
+//     const feelingN = document.getElementById("feelingN");
+
+//     //Text inside the speech bubble
+//     functionN.innerHTML = "" + imgVariables.functionBot;
+//     sensationN.innerHTML = "" + imgVariables.sensationBot;
+//     rationaleN.innerHTML = "" + imgVariables.rationaleBot;
+//     associationN.innerHTML = "" + imgVariables.associationBot;
+//     feelingN.innerHTML = "" + imgVariables.feelingBot;
+
+//     sensationN.style.display = "none";
+//     rationaleN.style.display = "none";
+//     associationN.style.display = "none";
+//     feelingN.style.display = "none";
+
+//     var textToType = functionN.innerText;
+
+//     console.log(textToType);
+
+//     var typewriter = new Typewriter(functionN, {
+//         delay: 50,
+//     });
+
+//     typewriter
+//         .typeString(textToType) // Get text content inside the element
+//         .start();
+
+//     let narrator = document.getElementById("botNarrator");
+
+//     // Event listener for change in dropdown selection
+//     bots.addEventListener("change", function () {
+//         // Object corresponding map dropdown values to n elements
+//         const narrations = {
+//             f: functionN,
+//             s: sensationN,
+//             r: rationaleN,
+//             a: associationN,
+//             fe: feelingN
+//         };
+
+//         // Hide all narrations
+//         Object.values(narrations).forEach(el => el.style.display = "none");
+
+//         // Show the selected narration if it exists
+//         const selectedNarration = narrations[bots.value];
+//         if (selectedNarration) {
+//             selectedNarration.style.display = "block";
+//         }
+
+//         const imagePath = {
+//             f: "/images/functionGIF.gif",
+//             s: "/images/sensationGIF.gif",
+//             r: "/images/rationaleGIF.gif",
+//             a: "/images/associationGIF.gif",
+//             fe: "/images/feelingGIF.gif"
+//         };
+
+//         const selectedPath = imagePath[bots.value];
+//         narrator.src = selectedPath;
+
+//         var textToType = selectedNarration.innerText;
+
+//         console.log(textToType);
+
+//         var typewriter = new Typewriter(selectedNarration, {
+//             delay: 75,
+//         });
+
+//         typewriter
+//             .typeString(textToType) // Get text content inside the element
+//             .start();
+//     });
+// }
+
+
 
 //Auto-Switch Image on Load
 switchImg();
