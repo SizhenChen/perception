@@ -43,7 +43,7 @@ function switchImg() {
     document.getElementById("randomSource").innerHTML = "On-line Source: " + imgVariables.source;
 
     document.getElementById("botNarrator").src = "/images/functionGIF.gif";
-    
+
     botsToImg(imgVariables);
 }
 
@@ -144,13 +144,20 @@ document.getElementById("switchImg").addEventListener("click", function () {
     switchImg();
 });
 
-let info = document.getElementsByClassName("randomText");
-info.style.display = "none";
+let randomText = document.querySelectorAll(".randomText");
+
+console.log(randomText);
+
+Array.from(randomText).forEach(randomText => {
+    randomText.style.display = "none";
+});
 
 document.getElementById("infoButton").addEventListener("click", function () {
-    if (info.style.display === "none" || info.style.display === "") {
-        info.style.display = "block"; // Show it
-    } else {
-        info.style.display = "none"; // Hide it
-    }
+    Array.from(randomText).forEach(randomText => {
+        if (randomText.style.display === "none") {
+            randomText.style.display = "block"; // Show it
+        } else {
+            randomText.style.display = "none"; // Hide it
+        }
+    })
 });
