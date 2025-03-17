@@ -5,6 +5,13 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'SpaceMonoBold';
+	src: url('SpaceMono-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
 	background-color: #e8e8e8;
 }
@@ -59,6 +66,25 @@ body {
 /* Hover effect */
 #imgIndex:hover div {
 	background: #6b6b6b;
+}
+
+#about {
+	text-decoration: none;
+    mix-blend-mode: exclusion;
+    color: rgb(0, 0, 0);
+    background: rgba(255, 255, 255); /* Transparent glass effect */
+    padding: 5px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+    font-family: "SpaceMonoBold", monospace, sans-serif;
+    letter-spacing: 1px;
+}
+
+#about:hover{
+	background: #606060;
+	color: rgb(255, 255, 255);
 }
 
 /* Positioning the container in the top right */
@@ -133,7 +159,8 @@ body {
 }
 
 #randomImage {
-	height: 94vh;
+	z-index: -1;
+	height: 95vh;
 	/* Full screen height */
 	width: auto;
 	/* Maintain aspect ratio */
