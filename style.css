@@ -6,7 +6,7 @@
 }
 
 body {
-	background-color: #dbdbdb;
+	background-color: #e8e8e8;
 }
 
 .buttonStyle {
@@ -108,7 +108,7 @@ body {
 	box-shadow: 0px 0px 20px rgb(0, 47, 255);
 }
 
-#randomImage:hover + #switchText{
+#randomImage:hover+#switchText {
 	opacity: 1;
 }
 
@@ -180,6 +180,7 @@ body {
 	display: block;
 	transition: filter 0.3s;
 	bottom: 1em;
+	filter: saturate(130%) contrast(130%);
 }
 
 #botNarrator:hover {
