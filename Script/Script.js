@@ -144,4 +144,13 @@ document.getElementById("switchImg").addEventListener("click", function () {
     switchImg();
 });
 
+let info = document.getElementsByClassName("randomText");
+info.style.display = "none";
 
+document.getElementById("infoButton").addEventListener("click", function () {
+    if (info.style.display === "none" || info.style.display === "") {
+        info.style.display = "block"; // Show it
+    } else {
+        info.style.display = "none"; // Hide it
+    }
+});

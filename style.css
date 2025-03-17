@@ -59,19 +59,52 @@ body {
 /* Hover effect */
 #imgIndex:hover div {
 	background: #6b6b6b;
-	/* Slightly lighter color on hover */
 }
 
-#randomText {
-	z-index: 3;
-	/* These elements will appear above the image */
-	color: #000000;
-	padding: 1px;
-	font-size: 16px;
+/* Positioning the container in the top right */
+#infoContainer {
 	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	top: 1em;
+	right: 1.5em;
+	width: 100px;
+	gap: 0.5em;
+}
+
+/* The button style */
+#infoButton {
+	color: rgb(0, 0, 0);
+	padding: 5px 10px;
+	font-size: 16px;
+	cursor: pointer;
+	border: 2px solid #000000;
+	transition: background 0.3s;
+	font-family: SpaceMono, monospace, sans-serif;
+	mix-blend-mode: exclusion;
+}
+
+#infoButton:hover {
+	background: #e8e8e8;
+	border: 2px solid #8d8d8d;
+	color: #ffffff;
+}
+
+.hidden {
+	display: none;
+}
+
+.randomText {
+	color: rgb(0, 0, 0);
+	padding: 5px 10px;
+	font-size: 16px;
+	cursor: pointer;
+	border: 2px solid #000000;
 	top: 10px;
 	right: 1em;
-	width: 60vw;
+	width: 15vw;
+	font-family: SpaceMono, monospace, sans-serif;
 }
 
 #switchText {
@@ -100,7 +133,7 @@ body {
 	object-fit: contain;
 	/* Ensures the whole image fits without cropping */
 	cursor: pointer;
-	box-shadow: 0px 0px 20px rgba(144, 144, 144, 0.5);
+	box-shadow: 0px 0px 20px rgba(171, 171, 171, 0.5);
 }
 
 #randomImage:hover {
