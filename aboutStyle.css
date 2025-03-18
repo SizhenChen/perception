@@ -67,4 +67,5 @@ body {
     font-family: SpaceMono, monospace, sans-serif;
     font-size: 18px;
     text-align: center;
+    cursor: pointer;
 }

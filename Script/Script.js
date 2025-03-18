@@ -137,7 +137,7 @@ function botsToImg() {
             console.log(textToType);
 
             var typewriter = new Typewriter(selectedNarration, {
-                delay: 65,
+                delay: 60,
             });
 
             typewriter
