@@ -53,6 +53,7 @@ body {
 	border: none;
 	background: transparent;
 	cursor: pointer;
+	padding: 8px 18px;
 }
 
 #imgIndex div {
@@ -95,7 +96,7 @@ body {
 	align-items: flex-end;
 	top: 1em;
 	right: 1.5em;
-	width: 100px;
+	width: auto;
 	gap: 0.5em;
 	mix-blend-mode: exclusion;
 }
