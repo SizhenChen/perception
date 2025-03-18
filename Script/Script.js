@@ -1,5 +1,4 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-// import Typewriter from './node_modules/typewriter-effect/dist/core.js';
 
 // Importing D3.js and Loading CSV Data
 const data = await d3.csv("Script/imageData.csv");
@@ -138,7 +137,7 @@ function botsToImg() {
             console.log(textToType);
 
             var typewriter = new Typewriter(selectedNarration, {
-                delay: 75,
+                delay: 65,
             });
 
             typewriter

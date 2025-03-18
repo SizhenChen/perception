@@ -10,9 +10,6 @@ body {
 }
 
 #home {
-    position: fixed;
-    top: 1em;
-    right: 1.5em;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     padding: 5px 10px;
@@ -59,7 +56,7 @@ body {
     background: #6b6b6b;
 }
 
-.About {
+#About {
     display: flex;
     justify-content: center;  /* Center horizontally */
     align-items: center; 
