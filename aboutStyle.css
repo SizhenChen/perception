@@ -68,7 +68,4 @@ body {
     font-size: 18px;
     text-align: center;
     cursor: pointer;
-    white-space: pre-line;
-    line-height: 1.6;
-    gap: 2em;
 }
