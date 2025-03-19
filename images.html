@@ -9,23 +9,24 @@
 </head>
 
 <body>
-    <div style="padding-bottom: 2em; ">
-        <label for="Type" style="color: white;"></label>
+    <div class="select">
+        <a id="about" href="/about.html">PERCEPTION</a>
         <select class="selectStyle" name="Type" id="typeSelector">
-            <option value="None">Type</option>
-            <option value="Graphic">Graphic</option>
-            <option value="Illustration">Illustration</option>
-            <option value="Photography">Photography</option>
-            <option value="Product">Product</option>
+            <option class="optionStyle" value="None">select type</option>
+            <option class="optionStyle" value="Graphic">Graphic</option>
+            <option class="optionStyle" value="Illustration">Illustration</option>
+            <option class="optionStyle" value="Photography">Photography</option>
+            <option class="optionStyle" value="Product">Product</option>
         </select>
 
-        <label for="Source" style="color: white;"></label>
         <select class="selectStyle" name="Source" id="sourceSelector">
-            <option value="None">Source</option>
+            <option class="optionStyle" value="None">select source</option>
         </select>
     </div>
 
-    <div class="imgContainer"></div>
+    <a id="home" href="/Index.html">home</a>
+
+    <div class="imgContainer" style="position: fixed; top: 5em;"></div>
 
     <script type="module" src="Script/imgScript.js"></script>
 </body>

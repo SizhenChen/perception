@@ -36,7 +36,7 @@ function hideImgs(listOfImgs) {
 
 function updateSources() {
     const sourceSelector = document.querySelector("#sourceSelector");
-    sourceSelector.innerHTML = '<option value="None">None</option>'; // Reset the sourceSelector
+    sourceSelector.innerHTML = '<option class="optionStyle" value="None">select source</option>'; // Reset the sourceSelector
 
     const Imgs = document.querySelectorAll("img:not(.hide)"); //Any of the imgs that don't have this class
     const seenSources = new Set(); // Track unique sources
@@ -48,6 +48,8 @@ function updateSources() {
             const option = document.createElement("option");
             option.value = source;
             option.innerHTML = source;
+            option.style.background = "#000000";
+            option.style.color = "white";
             sourceSelector.append(option);
         }
     });

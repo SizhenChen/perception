@@ -10,6 +10,8 @@ body {
 }
 
 #home {
+    position: fixed;
+    right: 1.5em;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     padding: 5px 10px;
