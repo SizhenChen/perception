@@ -1,3 +1,7 @@
+body {
+    background-color: #e8e8e8;
+}
+
 .imgContainer {
     position: relative;
     justify-content: center;
@@ -18,13 +22,14 @@
     /* Maintain aspect ratio */
     border-radius: 0px;
     border: none;
+    box-shadow: 0 0 10px #d0d0d0;
 }
 
 .hide {
     display: none;
 }
 
-.selectStyle {
+/* .selectStyle {
     width: 200px;
     height: 40px;
     padding: 10px;
@@ -35,4 +40,25 @@
     transition: border 0.3s;
     color: #007bff;
     mix-blend-mode: hard-light;
+} */
+
+.option {
+    padding: 6px 12px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    text-align: center;
+}
+
+.option:hover {
+    background-color: #555;
+}
+
+.option.active {
+    background-color: #e8e8e8;
+    color: black;
 }
