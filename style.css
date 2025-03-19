@@ -303,6 +303,11 @@ select>option {
     border-radius: 20px;
 }
 
+select:focus>option:checked {
+    background: rgb(188, 188, 188);
+    color: #000000;
+}
+
 #showBotsMenu {
 	border: none;
 	padding: 0;
