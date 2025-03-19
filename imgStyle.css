@@ -59,6 +59,7 @@ select:hover {
 
 option:hover{
     background-color: #e8e8e8;
+    cursor: pointer;
 }
 
 select:focus>option:checked {
