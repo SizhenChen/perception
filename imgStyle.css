@@ -3,17 +3,17 @@ body {
 }
 
 @font-face {
-	font-family: 'SpaceMono';
-	src: url('SpaceMono-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'SpaceMono';
+    src: url('SpaceMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-	font-family: 'SpaceMonoBold';
-	src: url('SpaceMono-Bold.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'SpaceMonoBold';
+    src: url('SpaceMono-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .imgContainer {
@@ -43,41 +43,50 @@ body {
     display: none;
 }
 
-.select{
+.select {
     position: fixed;
     width: 35em;
     top: 1em;
-	left: 18px;
+    left: 18px;
     mix-blend-mode: exclusion;
 }
 
-.selectStyle{
+select:hover {
+    color: #ffffff;
+    background: green;
+    /* hover on select */
+}
+
+option:hover{
+    background-color: #e8e8e8;
+}
+
+select:focus>option:checked {
+    background: rgb(255, 255, 255);
+    color: #000000;
+}
+
+.selectStyle {
     padding: 9px 10px;
     border-radius: 20px;
-    background:transparent;
+    background: transparent;
     color: rgb(255, 255, 255);
     text-align: center;
     font-family: SpaceMono, monospace, sans-serif;
     font-size: 13px;
     margin-left: 0.5em;
     align-items: center;
-    justify-content:last baseline;
+    justify-content: last baseline;
     cursor: pointer;
     appearance: none;
 }
 
-.optionStyle {
+option {
     width: 30px;
     height: 30px;
-    background: #000000; 
+    background: #000000;
     color: white;
-    transition: background 0.3s;
     border-radius: 20px;
-}
-
-/* Hover effect */
-.optionStyle:hover {
-    background: #6b6b6b;
 }
 
 #home {
@@ -87,7 +96,7 @@ body {
     padding: 5px 10px;
     font-size: 14px;
     top: 1.1em;
-    right:1.5em;
+    right: 1.5em;
     cursor: pointer;
     border-radius: 5px;
     border: none;
@@ -103,10 +112,11 @@ body {
 }
 
 #about {
-	text-decoration: none;
+    text-decoration: none;
     mix-blend-mode: exclusion;
     color: rgb(0, 0, 0);
-    background: rgb(255, 255, 255); /* Transparent glass effect */
+    background: rgb(255, 255, 255);
+    /* Transparent glass effect */
     padding: 4px 20px;
     font-size: 15px;
     cursor: pointer;
@@ -116,7 +126,7 @@ body {
     letter-spacing: 1px;
 }
 
-#about:hover{
-	background: #606060;
-	color: rgb(0, 0, 0);
+#about:hover {
+    background: #606060;
+    color: rgb(0, 0, 0);
 }
