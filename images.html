@@ -11,7 +11,7 @@
 <body>
     <div class="select">
         <a id="about" href="/about.html">PERCEPTION</a>
-        <select class="selectStyle" name="Type" id="typeSelector">
+        <select class="selectStyle" id="typeSelector">
             <option value="None">select type</option>
             <option value="Graphic">Graphic</option>
             <option value="Illustration">Illustration</option>
@@ -19,14 +19,18 @@
             <option value="Product">Product</option>
         </select>
 
-        <select class="selectStyle" name="Source" id="sourceSelector">
+        <select class="selectStyle" id="sourceSelector">
             <option value="None">select source</option>
         </select>
     </div>
 
     <a id="home" href="/Index.html">home</a>
 
-    <div class="imgContainer" style="position: fixed; top: 5em;"></div>
+    <button id="scrollLeft" class="scroll-btn">◀</button>
+    <div class="scrollContainer">
+        <div class="imgContainer"></div>
+    </div>
+    <button id="scrollRight" class="scroll-btn">▶</button>
 
     <script type="module" src="Script/imgScript.js"></script>
 </body>

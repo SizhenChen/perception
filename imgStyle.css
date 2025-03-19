@@ -16,24 +16,41 @@ body {
     font-style: normal;
 }
 
-.imgContainer {
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+.scrollContainer {
     display: flex;
-    flex-wrap: wrap;
-    /* Wrap to the next row if space runs out */
-    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 85vw;
+    height: 90vh;
+    overflow-x: auto;
+    /* Horizontal scrolling */
+    overflow-y: hidden;
+    /* Prevent vertical scrolling */
+    scroll-snap-type: x mandatory;
+    /* Snap effect */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+/* Hide scrollbar in Chrome/Safari */
+.scrollContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* Image container styles */
+.imgContainer {
+    display: flex;
+    gap: 15px;
+    width: max-content;
+    /* Allow scrolling */
 }
 
 .imgContainer img {
-    width: 260px;
-    /* Adjust size as needed */
-    height: 260px;
+    width: calc(95% / 5);
     object-fit: cover;
-    object-fit: cover;
-    /* Maintain aspect ratio */
     border-radius: 0px;
     border: none;
     box-shadow: 0 0 10px #d0d0d0;
@@ -54,12 +71,6 @@ body {
 select:hover {
     color: #ffffff;
     background: green;
-    /* hover on select */
-}
-
-option:hover{
-    background-color: #e8e8e8;
-    cursor: pointer;
 }
 
 select:focus>option:checked {
@@ -82,12 +93,17 @@ select:focus>option:checked {
     appearance: none;
 }
 
-option {
+select>option {
     width: 30px;
     height: 30px;
     background: #000000;
     color: white;
     border-radius: 20px;
+}
+
+select>option:hover {
+    box-shadow: 0 0 10px 100px rgb(143, 143, 143) inset;
+    color: white;
 }
 
 #home {
@@ -129,5 +145,35 @@ option {
 
 #about:hover {
     background: #606060;
+    color: rgb(255, 255, 255);
+}
+
+
+.scroll-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-family: "SpaceMonoBold", monospace, sans-serif;
+    cursor: pointer;
+    z-index: 10;
+    mix-blend-mode: exclusion;
+}
+
+.scroll-btn:hover{
+    background: #606060;
+    color: rgb(255, 255, 255);
+}
+
+#scrollLeft {
+    left: 3em;
+}
+
+#scrollRight {
+    right: 3em;
 }

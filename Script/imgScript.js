@@ -51,15 +51,6 @@ function updateSources() {
             sourceSelector.append(option);
         }
     });
-    // const sourceSelector = document.querySelector("#sourceSelector");
-    // sourceSelector.innerHTML = '<option value="None">None</option>';//Reset the sourceSelector to only have one option "None"
-    // const Imgs = document.querySelectorAll("img:not(.hide)"); //Any of the imgs that don't have this class
-    // for (let i = 0; i < Imgs.length; i++) {
-    //     const option = document.createElement("option"); //creates a new option
-    //     option.setAttribute("value", Imgs[i].getAttribute("data-source")); //option's value is set as the image's source
-    //     option.innerHTML = Imgs[i].getAttribute("data-source");
-    //     sourceSelector.append(option); //append the created option inside the sourceSelector
-    // }
 }
 
 let typeSelector = document.querySelector("#typeSelector");
@@ -89,3 +80,20 @@ typeSelector.onclick = function () {
     updateSources();
 };
 
+// let sourceSelector = document.querySelector("#sourceSelector");
+
+// console.log(sourceSelector);
+
+const scrollContainer = document.querySelector(".scrollContainer");
+const scrollLeft = document.getElementById("scrollLeft");
+const scrollRight = document.getElementById("scrollRight");
+
+// Scroll left
+scrollLeft.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: -270, behavior: "smooth" }); // Adjust scroll amount
+});
+
+// Scroll right
+scrollRight.addEventListener("click", () => {
+    scrollContainer.scrollBy({ left: 270, behavior: "smooth" }); // Adjust scroll amount
+});

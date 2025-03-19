@@ -1,5 +1,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
+console.log("cookies at the start:", document.cookie);//track cookie
+
 // Importing D3.js and Loading CSV Data
 const data = await d3.csv("Script/imageData.csv");
 console.log(data[0].path);
@@ -8,6 +10,8 @@ console.log(data[0].path);
 // button.onclick = function () {
 //     let text = document.querySelector("#userInput");
 //     console.log(text.value);
+//     document.cookie = `comment = ${text.value}`;
+//     alert(document.cookie);
 // }
 
 //Picking a Random Image from the CSV
