@@ -16,7 +16,7 @@ console.log(data[0].path);
 
 //Picking a Random Image from the CSV
 function getRandomObject() {
-    const num = Math.floor(Math.random() * 37);
+    const num = Math.floor(Math.random() * 40);
     // console.log(num);
     let path = data[num].path;
     let altText = data[num].altText;

@@ -54,6 +54,11 @@ body {
     border-radius: 0px;
     border: none;
     box-shadow: 0 0 10px #d0d0d0;
+    cursor: pointer;
+}
+
+.imgContainer img:hover {
+    opacity: 0.6;
 }
 
 .hide {
@@ -165,7 +170,7 @@ select>option:hover {
     mix-blend-mode: exclusion;
 }
 
-.scroll-btn:hover{
+.scroll-btn:hover {
     background: #606060;
     color: rgb(255, 255, 255);
 }
