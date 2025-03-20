@@ -131,6 +131,7 @@ body {
 	cursor: pointer;
 	font-family: SpaceMono, monospace, sans-serif;
 	background-color: #ffffff;
+	max-width: 40vw;
 }
 
 .randomText:hover{

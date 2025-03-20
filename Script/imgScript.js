@@ -90,10 +90,10 @@ const scrollRight = document.getElementById("scrollRight");
 
 // Scroll left
 scrollLeft.addEventListener("click", () => {
-    scrollContainer.scrollBy({ left: -270, behavior: "smooth" }); // Adjust scroll amount
+    scrollContainer.scrollBy({ left: -730, behavior: "smooth" }); // Adjust scroll amount
 });
 
 // Scroll right
 scrollRight.addEventListener("click", () => {
-    scrollContainer.scrollBy({ left: 270, behavior: "smooth" }); // Adjust scroll amount
+    scrollContainer.scrollBy({ left: 730, behavior: "smooth" }); // Adjust scroll amount
 });
