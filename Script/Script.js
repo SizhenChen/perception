@@ -6,32 +6,45 @@ console.log("cookies at the start:", document.cookie);//track cookie
 const data = await d3.csv("Script/imageData.csv");
 console.log(data[0].path);
 
-// let button = document.querySelector("#userInputButton");
-// button.onclick = function () {
-//     let text = document.querySelector("#userInput");
-//     console.log(text.value);
-//     document.cookie = `comment = ${text.value}`;
-//     alert(document.cookie);
-// }
+let randomNum;
+
+let button = document.querySelector("#userInputButton");
+button.onclick = function () {
+    let text = document.querySelector("#userInput");//replace spaces with %20
+    text = encodeURI(text.value);
+    console.log(text.value);
+    document.cookie = `comment${randomNum} = ${text}`;
+    alert(document.cookie);
+}
+
+function showCookie() {
+    let decodedCookie = decodeURIComponent(document.cookie);//removes the percent signs
+    let cookies = decodedCookie.split('; ');
+    console.log(cookies);
+    let commentCookie = cookies.find(row => row.startsWith(`comment${randomNum}=`));
+    console.log(commentCookie);
+    if (commentCookie) {
+        let commentValue = commentCookie.split("=")[1];
+        document.querySelector("#cookieTester").innerText = "Stored Comment: " + decodeURIComponent(commentValue);
+    }
+}
 
 //Picking a Random Image from the CSV
 function getRandomObject() {
-    const num = Math.floor(Math.random() * 40);
-    // console.log(num);
-    let path = data[num].path;
-    let altText = data[num].altText;
-    let type = data[num].type;
-    let source = data[num].source;
-    let functionBot = data[num].functionBot;
-    let sensationBot = data[num].sensationBot;
-    let rationaleBot = data[num].rationaleBot;
-    let associationBot = data[num].associationBot;
-    let feelingBot = data[num].feelingBot;
+    randomNum = Math.floor(Math.random() * 40);
+    // randomNum = 7;
+    let path = data[randomNum].path;
+    let altText = data[randomNum].altText;
+    let type = data[randomNum].type;
+    let source = data[randomNum].source;
+    let functionBot = data[randomNum].functionBot;
+    let sensationBot = data[randomNum].sensationBot;
+    let rationaleBot = data[randomNum].rationaleBot;
+    let associationBot = data[randomNum].associationBot;
+    let feelingBot = data[randomNum].feelingBot;
     console.log(path);
     return { path, altText, type, source, functionBot, sensationBot, rationaleBot, associationBot, feelingBot };
 }
-
-console.log(getRandomObject());
 
 //Switching the Image and Updating Metadata
 function switchImg() {
@@ -171,6 +184,8 @@ function botsToImg() {
 
 //Auto-Switch Image on Load
 switchImg();
+
+showCookie();
 
 //Handling UI Interactions (Menu Toggle & Image Switching)
 document.getElementById("showBotsMenu").addEventListener("click", function () {

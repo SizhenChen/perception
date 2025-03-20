@@ -3,6 +3,8 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 const data = await d3.csv("Script/imageData.csv");
 console.log(data[0].path);
 
+console.log(document.cookie);
+
 function appendImgs() {
     const container = document.querySelector(".imgContainer"); // Ensure a container exists in HTML
 
