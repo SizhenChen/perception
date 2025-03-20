@@ -50,7 +50,7 @@ function switchImg() {
     randomSource.setAttribute("data-source", imgVariables.source);
 
     // Reset button text
-    randomAltText.innerHTML = "Alt-text";
+    randomAltText.innerHTML = "Original Alt-text";
     randomType.innerHTML = "Image Type";
     randomSource.innerHTML = "On-line Source";
 
@@ -75,7 +75,7 @@ function switchImg() {
 }
 
 document.getElementById("randomAltText").addEventListener("click", function () {
-    this.innerHTML = (this.innerHTML === "Alt-text") ? this.getAttribute("data-alt") : "Alt-text";
+    this.innerHTML = (this.innerHTML === "Original Alt-text") ? this.getAttribute("data-alt") : "Original Alt-text";
 });
 
 document.getElementById("randomType").addEventListener("click", function () {
