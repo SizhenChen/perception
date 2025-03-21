@@ -16,24 +16,6 @@ body {
 	background-color: #e8e8e8;
 }
 
-.buttonStyle {
-	display: inline-block;
-	padding: 8px 18px;
-	background-color: #007bff;
-	color: white;
-	text-decoration: none;
-	border-radius: 10em;
-	border: none;
-	font-size: 14px;
-	font-family: sans-serif;
-	transition: background 0.3s;
-	mix-blend-mode: hard-light;
-}
-
-.buttonStyle:hover {
-	background-color: #0056b3;
-}
-
 #switchImg {
 	background: none;
 	border: none;
@@ -70,19 +52,20 @@ body {
 
 #about {
 	text-decoration: none;
-    mix-blend-mode: exclusion;
-    color: rgb(0, 0, 0);
-    background: rgba(255, 255, 255); /* Transparent glass effect */
-    padding: 5px 20px;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: all 0.3s ease-in-out;
-    font-family: "SpaceMonoBold", monospace, sans-serif;
-    letter-spacing: 1px;
+	mix-blend-mode: exclusion;
+	color: rgb(0, 0, 0);
+	background: rgba(255, 255, 255);
+	/* Transparent glass effect */
+	padding: 5px 20px;
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 20px;
+	transition: all 0.3s ease-in-out;
+	font-family: "SpaceMonoBold", monospace, sans-serif;
+	letter-spacing: 1px;
 }
 
-#about:hover{
+#about:hover {
 	background: #606060;
 	color: rgb(255, 255, 255);
 }
@@ -134,16 +117,16 @@ body {
 	max-width: 40vw;
 }
 
-.randomText:hover{
+.randomText:hover {
 	background: #606060;
 	color: #f5f5f5;
 }
 
-#randomType{
+#randomType {
 	white-space: nowrap;
 }
 
-#randomSource{
+#randomSource {
 	white-space: nowrap;
 }
 
@@ -186,22 +169,39 @@ body {
 	opacity: 1;
 }
 
-#userInput {
-	width: 200px;
+#inputBox {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	position: fixed;
+	top: 1em;
+	right: 7em;
+	mix-blend-mode: exclusion;
+	width: auto;
 	height: 16px;
-	padding: 10px;
-	font-size: 16px;
-	border: 2px solid #3498db;
-	border-radius: 10em;
-	outline: none;
-	transition: border 0.3s;
-	color: #007bff;
+	padding: 9px 10px;
+	border-radius: 20px;
+	background: transparent;
+	font-size: 14px;
+	border: 1px solid #ffffff;
 	mix-blend-mode: exclusion;
 }
 
-#userInput:focus {
-	border-color: #007bff;
-	/* Blue border on focus */
+#userInput{
+	width: 16em;
+	background: none;
+	border: none;
+	font-family: SpaceMono, monospace, sans-serif;
+	color: #b3b3b3;
+}
+
+#textInput:focus{
+	border: none;
+}
+
+#userInputButton {
+	border-radius: 1em;
+	border: none;
 }
 
 #botContainer {
@@ -287,26 +287,26 @@ body {
 	outline: none;
 	transition: border 0.3s;
 	background: transparent;
-    color: rgb(0, 0, 0);
+	color: rgb(0, 0, 0);
 	border: 1px solid black;
 	appearance: none;
 	cursor: pointer;
 }
 
-#bots:hover{
+#bots:hover {
 	color: #ffffff;
-    background: rgb(221, 92, 215);
+	background: rgb(221, 92, 215);
 }
 
 select>option {
-    background: #000000;
-    color: white;
-    border-radius: 20px;
+	background: #000000;
+	color: white;
+	border-radius: 20px;
 }
 
 select:focus>option:checked {
-    background: rgb(188, 188, 188);
-    color: #000000;
+	background: rgb(188, 188, 188);
+	color: #000000;
 }
 
 #showBotsMenu {
@@ -317,7 +317,7 @@ select:focus>option:checked {
 	display: inline-block;
 }
 
-#closeBotsMenu{
+#closeBotsMenu {
 	color: rgb(255, 255, 255);
 	background-color: #000000;
 	padding: 5px 10px;
@@ -329,7 +329,7 @@ select:focus>option:checked {
 	font-family: SpaceMono, monospace, sans-serif;
 }
 
-#closeBotsMenu:hover{
+#closeBotsMenu:hover {
 	color: rgb(0, 0, 0);
 	background-color: #9e9e9e;
 }
