@@ -31,8 +31,8 @@ function showCookie() {
 
 //Picking a Random Image from the CSV
 function getRandomObject() {
-    randomNum = Math.floor(Math.random() * 40);
-    // randomNum = 7;
+    // randomNum = Math.floor(Math.random() * 40);
+    randomNum = 9;
     let path = data[randomNum].path;
     let altText = data[randomNum].altText;
     let type = data[randomNum].type;

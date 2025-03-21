@@ -161,9 +161,9 @@ select>option:hover {
     background: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     border: none;
-    border-radius: 20px;
-    padding: 10px 15px;
-    font-size: 14px;
+    border-radius: 5em;
+    padding: 9px 12px;
+    font-size: 12px;
     font-family: "SpaceMonoBold", monospace, sans-serif;
     cursor: pointer;
     z-index: 10;
