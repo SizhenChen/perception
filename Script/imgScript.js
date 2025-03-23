@@ -117,3 +117,14 @@ scrollLeft.addEventListener("click", () => {
 scrollRight.addEventListener("click", () => {
     scrollContainer.scrollBy({ left: 730, behavior: "smooth" }); // Adjust scroll amount
 });
+
+//Handling UI Interactions (Menu Toggle & Image Switching)
+document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("click", function () {
+        document.getElementById("imgDescription").style.display = "flex";
+    });
+});
+
+document.getElementById("closeImgDescription").addEventListener("click", function () {
+    document.getElementById("imgDescription").style.display = "none";
+});
