@@ -53,7 +53,7 @@ function updateSources() {
             sourceSelector.append(option);
         }
     });
-}
+};
 
 let typeSelector = document.querySelector("#typeSelector");
 
@@ -82,7 +82,25 @@ typeSelector.onclick = function () {
     updateSources();
 };
 
-// let sourceSelector = document.querySelector("#sourceSelector");
+let arraySources = ["Pinterest", "Walmart", "Uncommon Goods", "Amazon", "Annual Photography Award", "Art.com", "Etsy", "NASA", "Weibo", "Wikipedia", "Behance", "My Modren Met", "TATE", "Poster House", "Ebay"];
+
+let sourceSelector = document.querySelector("#sourceSelector");
+
+//shows the correspoding images as a source is selected
+sourceSelector.addEventListener("change", function () {
+    let optionValue = sourceSelector.value;
+
+    if (arraySources.includes(optionValue)) {
+        console.log(optionValue);
+
+        const sourceSelected = document.querySelectorAll(`img[data-source="${optionValue}"]`);
+        console.log(sourceSelected);
+
+        hideImgs(allImgs);
+        showImgs(sourceSelected);
+
+    }
+});
 
 // console.log(sourceSelector);
 

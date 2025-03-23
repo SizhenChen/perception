@@ -182,3 +182,15 @@ select>option:hover {
 #scrollRight {
     right: 3em;
 }
+
+@media screen and (max-width: 430px) {
+    .select{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .imgContainer{
+        height: 100vh;
+    }
+
+}
