@@ -38,7 +38,7 @@ function hideImgs(listOfImgs) {
 
 function updateSources() {
     const sourceSelector = document.querySelector("#sourceSelector");
-    sourceSelector.innerHTML = '<option value="None">select source</option>'; // Reset the sourceSelector
+    sourceSelector.innerHTML = `<option value="None">select source</option>`; // Reset the sourceSelector
 
     const Imgs = document.querySelectorAll("img:not(.hide)"); //Any of the imgs that don't have this class
     const seenSources = new Set(); // Track unique sources
@@ -82,7 +82,7 @@ typeSelector.onclick = function () {
     updateSources();
 };
 
-let arraySources = ["Pinterest", "Walmart", "Uncommon Goods", "Amazon", "Annual Photography Award", "Art.com", "Etsy", "NASA", "Weibo", "Wikipedia", "Behance", "My Modren Met", "TATE", "Poster House", "Ebay"];
+let arraySources = ["Pinterest", "Walmart", "Uncommon Goods", "Amazon", "Annual Photography Award", "Art.com", "Etsy", "NASA", "Weibo", "Wikipedia", "Behance", "My Modern Met", "TATE", "Poster House", "Ebay"];
 
 let sourceSelector = document.querySelector("#sourceSelector");
 
