@@ -16,7 +16,7 @@ body {
     font-style: normal;
 }
 
-#imgDescription {
+#descriptionDiv {
     z-index: 10;
     display: flex;
 	position: fixed;
@@ -30,6 +30,22 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+
+#imgDescription{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin: 20vw;
+    align-items: center;
+    justify-content: center;
+}
+
+#inputDescription{
+    font-family: SpaceMonoBold, monospace, sans-serif;
+    font-size: 16px;
+}
+
+
 
 #closeImgDescription{
     color: rgb(255, 255, 255);

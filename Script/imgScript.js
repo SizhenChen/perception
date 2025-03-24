@@ -118,13 +118,25 @@ scrollRight.addEventListener("click", () => {
     scrollContainer.scrollBy({ left: 730, behavior: "smooth" }); // Adjust scroll amount
 });
 
-//Handling UI Interactions (Menu Toggle & Image Switching)
+const descriptionDiv = document.getElementById("descriptionDiv");
+
 document.querySelectorAll("img").forEach(img => {
     img.addEventListener("click", function () {
-        document.getElementById("imgDescription").style.display = "flex";
+        // Remove only images from descriptionDiv (but not from the document)
+        descriptionDiv.querySelectorAll("img").forEach(img => img.remove());
+
+        // Show descriptionDiv
+        descriptionDiv.style.display = "flex";
+
+        // Clone the clicked image instead of moving it
+        const clonedImg = this.cloneNode(true);
+        clonedImg.style.width = "35vw";
+
+        // Append the cloned image inside descriptionDiv
+        descriptionDiv.appendChild(clonedImg);
     });
 });
 
 document.getElementById("closeImgDescription").addEventListener("click", function () {
-    document.getElementById("imgDescription").style.display = "none";
+    document.getElementById("descriptionDiv").style.display = "none";
 });
