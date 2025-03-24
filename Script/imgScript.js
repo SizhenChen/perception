@@ -137,7 +137,7 @@ document.querySelectorAll("img").forEach(img => {
         // Append the cloned image inside descriptionDiv
         descriptionDiv.appendChild(clonedImg);
 
-        inputDescription.innerText = `Your Own Description: ${img.getAttribute("data-cookie")}`;
+        inputDescription.innerHTML = `Your Own Description: <br> ${img.getAttribute("data-cookie")}`;
     });
 });
 

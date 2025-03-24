@@ -43,9 +43,9 @@ body {
 #inputDescription{
     font-family: SpaceMono, monospace, sans-serif;
     font-size: 16px;
+    text-align: center;
+    line-height: 24px;
 }
-
-
 
 #closeImgDescription{
     color: rgb(255, 255, 255);

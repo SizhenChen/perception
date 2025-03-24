@@ -154,12 +154,19 @@ function botsToImg() {
             console.log(textToType);
 
             var typewriter = new Typewriter(selectedNarration, {
-                delay: 60,
+                delay: 65,
             });
 
             typewriter
                 .typeString(textToType) // Get text content inside the element
                 .start();
+
+            selectedNarration.addEventListener("click", handleClick);
+
+            function handleClick() {
+                typewriter.stop();
+                selectedNarration.innerHTML = textToType;
+            }
         }
 
         let narrator = document.getElementById("botNarrator");
