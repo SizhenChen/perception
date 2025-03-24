@@ -120,6 +120,8 @@ scrollRight.addEventListener("click", () => {
 
 const descriptionDiv = document.getElementById("descriptionDiv");
 
+const inputDescription = document.getElementById("inputDescription");
+
 document.querySelectorAll("img").forEach(img => {
     img.addEventListener("click", function () {
         // Remove only images from descriptionDiv (but not from the document)
@@ -130,13 +132,17 @@ document.querySelectorAll("img").forEach(img => {
 
         // Clone the clicked image instead of moving it
         const clonedImg = this.cloneNode(true);
-        clonedImg.style.width = "35vw";
+        clonedImg.style.width = "30vw";
 
         // Append the cloned image inside descriptionDiv
         descriptionDiv.appendChild(clonedImg);
+
+        inputDescription.innerText = `Your Own Description: ${img.getAttribute("data-cookie")}`;
     });
 });
 
 document.getElementById("closeImgDescription").addEventListener("click", function () {
     document.getElementById("descriptionDiv").style.display = "none";
 });
+
+
