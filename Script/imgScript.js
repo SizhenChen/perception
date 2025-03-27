@@ -29,7 +29,7 @@ function getCookie(imgNum) {
     let cookieArray = decodedCookie.split("; ");
     // console.log(cookieArray);
     for (let i = 0; i < cookieArray.length; i++) {
-        let comment = cookieArray[i].split("="); 
+        let comment = cookieArray[i].split("=");
         // console.log(comment);
         if (comment[0] === `comment${imgNum}`) {//comment[0] is the first portion of the splited cookieArray[i]
             return comment[1];//return the comment part of the splited cookieArray[i]
@@ -106,6 +106,9 @@ sourceSelector.addEventListener("change", function () {
 
     if (arraySources.includes(optionValue)) {
         console.log(optionValue);
+
+        // const notHidden = document.querySelectorAll(":not(hide)");
+        // exclude elements that are already hidden
 
         const sourceSelected = document.querySelectorAll(`img[data-source="${optionValue}"]`);
         console.log(sourceSelected);
