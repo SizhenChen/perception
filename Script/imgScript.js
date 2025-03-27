@@ -14,7 +14,7 @@ function appendImgs() {
         const img = document.createElement("img");
         img.setAttribute("data-source", data[num].source);
         img.src = path;
-        img.id = `image${num}`;
+        img.id = `image${num}`; //adding id for each img
         img.classList.add(data[num].type);
         console.log(data[num].type);
         container.appendChild(img);
@@ -23,6 +23,20 @@ function appendImgs() {
 
 appendImgs();
 // document.addEventListener("DOMContentLoaded", appendImgs);
+
+function getCookie(imgNum) {
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookieArray = decodedCookie.split("; ");
+    // console.log(cookieArray);
+    for (let i = 0; i < cookieArray.length; i++) {
+        let comment = cookieArray[i].split("="); 
+        // console.log(comment);
+        if (comment[0] === `comment${imgNum}`) {//comment[0] is the first portion of the splited cookieArray[i]
+            return comment[1];//return the comment part of the splited cookieArray[i]
+        }
+    }
+}
+console.log(getCookie(8));
 
 function showImgs(listOfImgs) {
     for (let i = 0; i < listOfImgs.length; i++) {
@@ -137,7 +151,9 @@ document.querySelectorAll("img").forEach(img => {
         // Append the cloned image inside descriptionDiv
         descriptionDiv.appendChild(clonedImg);
 
-        inputDescription.innerHTML = `Your Own Description: <br> ${img.getAttribute("data-cookie")}`;
+        let imgNum = img.getAttribute("id").split("e")[1]; //only get the number after "image"
+
+        inputDescription.innerHTML = `Your Own Description: <br> ${getCookie(imgNum)}`;
     });
 });
 
