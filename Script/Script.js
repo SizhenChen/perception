@@ -14,7 +14,7 @@ button.onclick = function () {
     text = encodeURI(text.value);
     console.log(text.value);
     document.cookie = `comment${randomNum} = ${text}`;
-    alert(document.cookie);
+    // alert(document.cookie);
 }
 
 function showCookie() {
