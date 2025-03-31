@@ -202,6 +202,12 @@ body {
 #userInputButton {
 	border-radius: 1em;
 	border: none;
+	cursor: pointer;
+}
+
+#userInputButton:hover{
+	background: #757575;
+	color: #ffffff;
 }
 
 #botContainer {
