@@ -102,15 +102,16 @@ let sourceSelector = document.querySelector("#sourceSelector");
 
 //shows the correspoding images as a source is selected
 sourceSelector.addEventListener("change", function () {
-    let optionValue = sourceSelector.value;
+    let sourceValue = sourceSelector.value;
+    let typeValue = typeSelector.value;
 
-    if (arraySources.includes(optionValue)) {
-        console.log(optionValue);
+    if (arraySources.includes(sourceValue)) {
+        console.log(sourceValue);
 
         // const notHidden = document.querySelectorAll(":not(hide)");
         // exclude elements that are already hidden
 
-        const sourceSelected = document.querySelectorAll(`img[data-source="${optionValue}"]`);
+        const sourceSelected = document.querySelectorAll(`img[data-source="${sourceValue}"]`);
         console.log(sourceSelected);
 
         hideImgs(allImgs);
