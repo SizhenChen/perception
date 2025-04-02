@@ -69,7 +69,7 @@ function switchImg() {
     randomSource.innerHTML = "On-line Source";
 
 
-    document.getElementById("botNarrator").src = "/images/functionGIF.gif";
+    document.getElementById("botNarrator").src = "../images/functionGIF.gif";
 
     // Store bot narrations using data-attributes(Get text in the speech bubble)
     let botsDropdown = document.getElementById("bots");
