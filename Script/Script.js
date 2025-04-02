@@ -69,7 +69,7 @@ function switchImg() {
     randomSource.innerHTML = "On-line Source";
 
 
-    document.getElementById("botNarrator").src = "../images/functionGIF.gif";
+    document.getElementById("botNarrator").src = "images/functionGIF.gif";
 
     // Store bot narrations using data-attributes(Get text in the speech bubble)
     let botsDropdown = document.getElementById("bots");
@@ -174,11 +174,11 @@ function botsToImg() {
 
         //bot GIF changes correspondingly
         const imagePath = {
-            f: "../images/functionGIF.gif",
-            s: "../images/sensationGIF.gif",
-            r: "///images/rationaleGIF.gif",
-            a: "../images/associationGIF.gif",
-            fe: "../images/feelingGIF.gif"
+            f: "images/functionGIF.gif",
+            s: "images/sensationGIF.gif",
+            r: "images/rationaleGIF.gif",
+            a: "images/associationGIF.gif",
+            fe: "images/feelingGIF.gif"
         };
 
         const selectedPath = imagePath[bots.value];
