@@ -174,11 +174,11 @@ function botsToImg() {
 
         //bot GIF changes correspondingly
         const imagePath = {
-            f: "/images/functionGIF.gif",
-            s: "/images/sensationGIF.gif",
-            r: "/images/rationaleGIF.gif",
-            a: "/images/associationGIF.gif",
-            fe: "/images/feelingGIF.gif"
+            f: "../images/functionGIF.gif",
+            s: "../images/sensationGIF.gif",
+            r: "///images/rationaleGIF.gif",
+            a: "../images/associationGIF.gif",
+            fe: "../images/feelingGIF.gif"
         };
 
         const selectedPath = imagePath[bots.value];
