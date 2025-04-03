@@ -105,18 +105,30 @@ sourceSelector.addEventListener("change", function () {
     let sourceValue = sourceSelector.value;
     let typeValue = typeSelector.value;
 
-    if (arraySources.includes(sourceValue)) {
-        console.log(sourceValue);
+    if (arraySources.includes(sourceValue) && (typeValue !== "None")) {
+        // console.log(sourceValue);
 
         // const notHidden = document.querySelectorAll(":not(hide)");
         // exclude elements that are already hidden
 
+        const typeSelected = document.querySelectorAll(`.${typeValue}`);
+        // console.log(typeSelected);
+
         const sourceSelected = document.querySelectorAll(`img[data-source="${sourceValue}"]`);
-        console.log(sourceSelected);
+        // console.log(sourceSelected);
+
+        //[...typeSelected] take typeSelected and interpret it as an array
+        const combinedSelected = [...typeSelected].filter(v => [...sourceSelected].indexOf(v) > -1);
+        console.log(combinedSelected);
+        //check the type selector and exclude those that are not selected
+
+        hideImgs(allImgs);
+        showImgs(combinedSelected);
+    }else{
+        const sourceSelected = document.querySelectorAll(`img[data-source="${sourceValue}"]`);
 
         hideImgs(allImgs);
         showImgs(sourceSelected);
-
     }
 });
 
