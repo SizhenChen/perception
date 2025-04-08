@@ -187,7 +187,7 @@ body {
 	mix-blend-mode: exclusion;
 }
 
-#userInput{
+#userInput {
 	width: 16em;
 	background: none;
 	border: none;
@@ -195,7 +195,7 @@ body {
 	color: #b3b3b3;
 }
 
-#textInput:focus{
+#textInput:focus {
 	border: none;
 }
 
@@ -205,7 +205,7 @@ body {
 	cursor: pointer;
 }
 
-#userInputButton:hover{
+#userInputButton:hover {
 	background: #757575;
 	color: #ffffff;
 }
@@ -343,7 +343,51 @@ select:focus>option:checked {
 
 
 @media only screen and (max-width: 500px) {
-	/* body {
-	  background-color: lightblue;
-	} */
-  }
+	#switchImage {
+		height: 100vh;
+	}
+
+	#randomImage {
+		width: 100vw;
+		height: auto;
+	}
+
+	#randomImage:active {
+		mix-blend-mode: color;
+		box-shadow: 0px 0px 20px rgb(0, 47, 255);
+	}
+
+	#switchText {
+		opacity: 0;
+	}
+
+	#randomImage:active+#switchText {
+		opacity: 1;
+	}
+
+	#botContainer {
+		flex-direction: column;
+		transform: translate(-1%);
+	}
+
+	#botNarrator {
+		width: 8em;
+		bottom: 1em;
+		mix-blend-mode: exclusion;
+	}
+
+	.speechBubble {
+		width: 85vw;
+	}
+
+	.speechBubble:after {
+		content: "";
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		width: 0;
+		border: 0px solid transparent;
+		border-top-color: #ffffff;
+		border-left: 40px;
+	}
+}
