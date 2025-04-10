@@ -15,7 +15,8 @@ button.onclick = function () {
     console.log(text.value);
     document.cookie = `comment${randomNum} = ${text}`;
     console.log(document.cookie);
-    text.display="none";
+    alert("You've input your own description!");
+    // text.value = "";
 }
 
 function showCookie() {
