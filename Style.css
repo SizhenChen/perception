@@ -352,12 +352,21 @@ select:focus>option:checked {
 		height: auto;
 	}
 
+	#randomImage:hover {
+		mix-blend-mode: normal;
+		box-shadow: none;
+	}
+
 	#randomImage:active {
 		mix-blend-mode: color;
 		box-shadow: 0px 0px 20px rgb(0, 47, 255);
 	}
 
 	#switchText {
+		top: 45%;
+	}
+
+	#randomImage:hover+#switchText {
 		opacity: 0;
 	}
 
@@ -391,3 +400,10 @@ select:focus>option:checked {
 		border-left: 40px;
 	}
 }
+
+/* @media (hover: none) {
+	#randomImage:active {
+		mix-blend-mode: color;
+		box-shadow: 0px 0px 20px rgb(0, 47, 255);
+	}
+} */
