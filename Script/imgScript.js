@@ -5,6 +5,8 @@ console.log(data[0].path);
 
 console.log(document.cookie);
 
+console.log(data)
+
 function appendImgs() {
     const container = document.querySelector(".imgContainer"); // Ensure a container exists in HTML
 
@@ -15,8 +17,8 @@ function appendImgs() {
         img.setAttribute("data-source", data[num].source);
         img.src = path;
         img.id = `image${num}`; //adding id for each img
-        img.classList.add(data[num].type);
         console.log(data[num].type);
+        img.classList.add(data[num].type);
         container.appendChild(img);
     }
 }
