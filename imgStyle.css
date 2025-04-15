@@ -229,6 +229,7 @@ select>option:hover {
 
 @media only screen and (max-width: 500px) {
     .scrollContainer {
+        align-items: first baseline;
         width: 90vw;
         justify-content: center;
         top: 55%;
@@ -240,7 +241,6 @@ select>option:hover {
     }
 
     .imgContainer {
-        padding-top:100px;
         flex-wrap: wrap;
         gap: 10px;
         justify-content: center;
@@ -257,5 +257,13 @@ select>option:hover {
     .imgContainer img {
         width: calc(85vw / 2);
         height: 15em;
+    }
+
+    #sourceSelector{
+        font-size: 10px;
+    }
+
+    #typeSelector{
+        font-size: 10px;
     }
 }

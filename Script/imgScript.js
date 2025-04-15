@@ -179,10 +179,16 @@ document.getElementById("closeImgDescription").addEventListener("click", functio
     document.getElementById("descriptionDiv").style.display = "none";
 });
 
-// window.addEventListener('resize', () => {
-//     if (window.innerWidth < 500) {
-//         document.querySelector("#about").innerHTML = "";
-//     }
-// });
+function updateButtons(){
+    if (window.innerWidth < 500) {
+        document.querySelector("#about").innerHTML = "";
+    }else{
+        document.querySelector("#about").innerHTML = "PERCEPTION";
+    }
+}
 
+window.addEventListener('resize', () => {
+    updateButtons();
+});
 
+updateButtons();
