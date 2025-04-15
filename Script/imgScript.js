@@ -126,7 +126,7 @@ sourceSelector.addEventListener("change", function () {
 
         hideImgs(allImgs);
         showImgs(combinedSelected);
-    }else{
+    } else {
         const sourceSelected = document.querySelectorAll(`img[data-source="${sourceValue}"]`);
 
         hideImgs(allImgs);
@@ -178,5 +178,11 @@ document.querySelectorAll("img").forEach(img => {
 document.getElementById("closeImgDescription").addEventListener("click", function () {
     document.getElementById("descriptionDiv").style.display = "none";
 });
+
+// window.addEventListener('resize', () => {
+//     if (window.innerWidth < 500) {
+//         document.querySelector("#about").innerHTML = "";
+//     }
+// });
 
 
