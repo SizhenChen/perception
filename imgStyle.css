@@ -272,10 +272,12 @@ select>option:hover {
 
     #sourceSelector {
         font-size: 12px;
+        text-align: center;
     }
 
     #typeSelector {
         font-size: 12px;
+        text-align: center;
     }
 
     #about {
