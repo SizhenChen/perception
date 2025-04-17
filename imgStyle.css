@@ -178,9 +178,9 @@ select>option:hover {
     color: #f5f5f5;
 }
 
-#homeIcon {
+/* #homeIcon {
     display: none;
-}
+} */
 
 #homeIcon:active {
     background: #606060;
@@ -242,7 +242,7 @@ select>option:hover {
         align-items: first baseline;
         width: 90vw;
         justify-content: center;
-        margin-top: 150px;
+        margin-top: 135px;
         overflow-x: hidden;
         /* Horizontal scrolling */
         overflow-y: auto;
@@ -254,7 +254,7 @@ select>option:hover {
         flex-wrap: wrap;
         gap: 20px;
         justify-content: center;
-        margin-bottom: 150px;
+        margin-bottom: 135px;
     }
 
     #scrollLeft {
@@ -301,7 +301,7 @@ select>option:hover {
         width: 120px;
     }
 
-    #homeIcon {
+    /* #homeIcon {
         display: block;
         position: fixed;
         top: 14px;
@@ -312,7 +312,7 @@ select>option:hover {
 
     #home {
         display: none;
-    }
+    } */
 
     #descriptionDiv {
         flex-wrap: wrap;
