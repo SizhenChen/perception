@@ -308,11 +308,12 @@ select>option:hover {
         right: 20px;
         cursor: pointer;
         transition: background 0.3s;
-    }
+    } */
 
     #home {
-        display: none;
-    } */
+        top: 1.6em;
+        font-size: 12px;
+    }
 
     #descriptionDiv {
         flex-wrap: wrap;
