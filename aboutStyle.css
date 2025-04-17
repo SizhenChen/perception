@@ -99,6 +99,7 @@ body {
     }
 
     #About {
+        margin-top: 3em;
         font-size: 16px;
         height: 60vh;
         align-items: first baseline;
