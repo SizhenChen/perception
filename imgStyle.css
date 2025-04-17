@@ -309,4 +309,16 @@ select>option:hover {
     #home {
         display: none;
     }
+
+    #descriptionDiv {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #imgDescription {
+        max-width: 60vw;
+    }
 }

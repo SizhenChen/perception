@@ -164,7 +164,7 @@ document.querySelectorAll("img").forEach(img => {
 
         // Clone the clicked image instead of moving it
         const clonedImg = this.cloneNode(true);
-        clonedImg.style.width = "30vw";
+        clonedImg.style.width = "80vw";
 
         // Append the cloned image inside descriptionDiv
         descriptionDiv.appendChild(clonedImg);
