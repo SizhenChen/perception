@@ -227,3 +227,30 @@ document.getElementById("infoButton").addEventListener("click", function () {
         }
     })
 });
+
+let showInput = document.getElementById("showInputBox");
+let input = document.getElementById("inputBox");
+
+showInput.addEventListener("click", () => {
+    if(input.hidden === true){
+        input.hidden = false;
+    }else{
+        input.hidden = true;
+    }
+
+    console.log("button is clicked!");
+})
+
+function screenChange(){
+    if (window.innerWidth < 500) {
+        input.hidden = true;
+    }else{
+        input.hidden = false;
+    }
+}
+
+window.addEventListener("resize",()=>{
+    screenChange();
+})
+
+screenChange();

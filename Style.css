@@ -187,6 +187,10 @@ body {
 	mix-blend-mode: exclusion;
 }
 
+#inputBox[hidden]{
+	display: none;
+}
+
 #userInput {
 	width: 16em;
 	background: none;
@@ -341,8 +345,20 @@ select:focus>option:checked {
 	background-color: #9e9e9e;
 }
 
+#showInputBox{
+	background-color: #000000;
+}
 
 @media only screen and (max-width: 500px) {
+	#showInputBox{
+		background-color: #000000;
+		height: 1em;
+	}
+
+	/* #inputBox{
+		display: none;
+	} */
+
 	#switchImage {
 		height: 100vh;
 	}
