@@ -247,7 +247,7 @@ select>option:hover {
         align-items: first baseline;
         width: 90vw;
         justify-content: center;
-        margin-top: 135px;
+        margin-top: 125px;
         overflow-x: hidden;
         /* Horizontal scrolling */
         overflow-y: auto;
