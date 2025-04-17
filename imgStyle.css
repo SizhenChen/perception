@@ -248,13 +248,13 @@ select>option:hover {
         overflow-y: auto;
         /* Prevent vertical scrolling */
         scroll-snap-type: y mandatory;
-        margin-bottom: 120px;
     }
 
     .imgContainer {
         flex-wrap: wrap;
         gap: 20px;
         justify-content: center;
+        margin-bottom: 120px;
     }
 
     #scrollLeft {
