@@ -178,6 +178,11 @@ select>option:hover {
     color: #f5f5f5;
 }
 
+#home:active {
+    background: #606060;
+    color: #f5f5f5;
+}
+
 /* #homeIcon {
     display: none;
 } */
@@ -272,14 +277,22 @@ select>option:hover {
 
     #sourceSelector {
         font-size: 12px;
+        text-align-last: center;
+        /* aligns selected item in dropdown */
         text-align: center;
-        align-content: center;
+        /* for fallback */
+        direction: ltr;
+        /* prevents quirks in some Android devices */
     }
 
     #typeSelector {
         font-size: 12px;
+        text-align-last: center;
+        /* aligns selected item in dropdown */
         text-align: center;
-        align-content: center;
+        /* for fallback */
+        direction: ltr;
+        /* prevents quirks in some Android devices */
     }
 
     #about {
@@ -326,5 +339,5 @@ select>option:hover {
     #imgDescription {
         max-width: 60vw;
     }
-    
+
 }
