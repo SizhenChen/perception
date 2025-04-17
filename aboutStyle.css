@@ -70,11 +70,12 @@ body {
 
 #About {
     display: flex;
-    justify-content: center;  /* Center horizontally */
-    align-items: center; 
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
     width: 80vw;
     height: 80vh;
-    margin: auto; 
+    margin: auto;
     bottom: 0;
     font-family: SpaceMono, monospace, sans-serif;
     font-size: 18px;
@@ -93,7 +94,18 @@ body {
     } */
 
     #home {
-        top: 1.6em;
-        font-size: 12px;
+        top: 1.5em;
+        font-size: 14px;
+    }
+
+    #About {
+        font-size: 16px;
+        height: 80vh;
+        align-items: first baseline;
+        overflow-x: hidden;
+        /* Horizontal scrolling */
+        overflow-y: auto;
+        /* Prevent vertical scrolling */
+        scroll-snap-type: y mandatory;
     }
 }
