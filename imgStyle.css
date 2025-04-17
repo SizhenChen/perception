@@ -242,7 +242,7 @@ select>option:hover {
         align-items: first baseline;
         width: 90vw;
         justify-content: center;
-        margin-top: 60px;
+        margin-top: 150px;
         overflow-x: hidden;
         /* Horizontal scrolling */
         overflow-y: auto;
@@ -254,7 +254,7 @@ select>option:hover {
         flex-wrap: wrap;
         gap: 20px;
         justify-content: center;
-        margin-bottom: 120px;
+        margin-bottom: 150px;
     }
 
     #scrollLeft {
@@ -300,7 +300,7 @@ select>option:hover {
     #homeIcon {
         display: block;
         position: fixed;
-        top: 12.5px;
+        top: 14px;
         right: 20px;
         cursor: pointer;
         transition: background 0.3s;
@@ -321,4 +321,5 @@ select>option:hover {
     #imgDescription {
         max-width: 60vw;
     }
+    
 }
