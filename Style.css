@@ -405,7 +405,7 @@ select:focus>option:checked {
 		bottom: 88px;
 		top: auto;
 		width: 0;
-		border: 20px solid transparent;
+		border: 17px solid transparent;
 		border-top-color: #ffffff;
 		border-left: 40px;
 		margin: 0;
