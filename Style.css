@@ -437,6 +437,7 @@ select:focus>option:checked {
 
 	#inputBox {
 		top: 1.5em;
+		right: 6.2em;
 	}
 
 	#showInputBox {
@@ -452,6 +453,10 @@ select:focus>option:checked {
 		border: 1px solid rgb(255, 255, 255);
 		transition: background 0.3s;
 		font-family: SpaceMono, monospace, sans-serif;
+	}
+
+	#userInput {
+		width: 10em;
 	}
 
 	#userInputButton {

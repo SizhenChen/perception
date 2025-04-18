@@ -231,7 +231,6 @@ document.getElementById("infoButton").addEventListener("click", function () {
 let showInput = document.getElementById("showInputBox");
 let input = document.getElementById("inputBox");
 let enterInput = document.getElementById("userInputButton");
-let userInput = document.querySelector("#userInput");
 
 showInput.addEventListener("click", () => {
     input.hidden = false;
@@ -247,22 +246,14 @@ enterInput.addEventListener("click", () => {
 function screenChange() {
     if (window.innerWidth < 500) {
         input.hidden = true;
-        input.style.right = "6.2em";
     } else {
         input.hidden = false;
-        input.style.right = "7em";
     }
 
     if (window.innerWidth < 500) {
         document.querySelector("#about").innerHTML = "P";
     } else {
         document.querySelector("#about").innerHTML = "PERCEPTION";
-    }
-
-    if (window.innerWidth < 500) {
-        userInput.style.width = "10em";
-    } else {
-        userInput.style.width = "16em";
     }
 }
 
