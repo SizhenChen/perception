@@ -230,32 +230,43 @@ document.getElementById("infoButton").addEventListener("click", function () {
 
 let showInput = document.getElementById("showInputBox");
 let input = document.getElementById("inputBox");
+let enterInput = document.getElementById("userInputButton");
+let userInput = document.querySelector("#userInput");
 
 showInput.addEventListener("click", () => {
-    if(input.hidden === true){
-        input.hidden = false;
-    }else{
-        input.hidden = true;
-    }
-
-    console.log("button is clicked!");
+    input.hidden = false;
+    showInput.style.display = "none";
+    // console.log("button is clicked!");
 })
 
-function screenChange(){
+enterInput.addEventListener("click", () => {
+    input.hidden = true;
+    showInput.style.display = "block";
+})
+
+function screenChange() {
     if (window.innerWidth < 500) {
         input.hidden = true;
-    }else{
+        input.style.right = "6.2em";
+    } else {
         input.hidden = false;
+        input.style.right = "7em";
     }
 
     if (window.innerWidth < 500) {
         document.querySelector("#about").innerHTML = "P";
-    }else{
+    } else {
         document.querySelector("#about").innerHTML = "PERCEPTION";
+    }
+
+    if (window.innerWidth < 500) {
+        userInput.style.width = "10em";
+    } else {
+        userInput.style.width = "16em";
     }
 }
 
-window.addEventListener("resize",()=>{
+window.addEventListener("resize", () => {
     screenChange();
 })
 
