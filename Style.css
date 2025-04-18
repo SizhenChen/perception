@@ -456,11 +456,11 @@ select:focus>option:checked {
 	#showInputBox {
 		display: block;
 		position: fixed;
-		right: 6.2em;
+		right: 7.2em;
 		background-color: #000000;
-		color: rgb(255, 255, 255);
-		padding: 5px 12px;
-		font-size: 14px;
+		color: rgb(230, 230, 230);
+		padding: 6px 12px;
+		font-size: 12px;
 		cursor: pointer;
 		border-radius: 20px;
 		border: 1px solid rgb(255, 255, 255);
