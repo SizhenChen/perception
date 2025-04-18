@@ -278,7 +278,7 @@ body {
 }
 
 #botNarrator:hover {
-	filter: saturate(140%) contrast(110%);
+	filter: saturate(150%) contrast(110%) brightness(120%);
 	background-color: #ffffff;
 }
 
