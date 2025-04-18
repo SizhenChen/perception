@@ -411,6 +411,15 @@ select:focus>option:checked {
 		margin: 0;
 	}
 
+	#bots {
+        text-align-last: center;
+        /* aligns selected item in dropdown */
+        text-align: center;
+        /* for fallback */
+        direction: ltr;
+        /* prevents quirks in some Android devices */
+	}
+
 	#about {
 		padding: 4px 12px;
 		font-family: SpaceMonoBold, monospace, sans-serif;
