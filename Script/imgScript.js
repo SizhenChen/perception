@@ -171,6 +171,14 @@ document.querySelectorAll("img").forEach(img => {
             clonedImg.style.width = "28vw";
         }
 
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 500) {
+                clonedImg.style.width = "65vw";
+            } else {
+                clonedImg.style.width = "28vw";
+            }
+        });
+
         // Append the cloned image inside descriptionDiv
         descriptionDiv.appendChild(clonedImg);
 
