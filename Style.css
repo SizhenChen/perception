@@ -404,7 +404,7 @@ select:focus>option:checked {
 		content: "";
 		position: fixed;
 		left: 50%;
-		bottom: 90px;
+		bottom: 92px;
 		top: auto;
 		width: 0;
 		border: 17px solid transparent;
