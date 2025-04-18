@@ -18,3 +18,15 @@ function handleClick() {
     typewriter.stop();
     aboutText.innerHTML = textToType;
 }
+
+function screenChange(){
+    if (window.innerWidth < 500) {
+        document.querySelector("#imgIndex").style.paddingTop = "18px";
+    }
+}
+
+window.addEventListener('resize', () => {
+    screenChange();
+});
+
+screenChange();
