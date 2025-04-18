@@ -408,12 +408,14 @@ select:focus>option:checked {
 
 	.speechBubble:after {
 		content: "";
-		position: absolute;
+		position: fixed;
 		left: 50%;
-		top: 110%;
+		bottom: 110px;
+		top: auto;
 		width: 0;
 		border: 20px solid transparent;
 		border-top-color: #ffffff;
 		border-left: 40px;
+		margin: 0;
 	}
 }
