@@ -460,8 +460,8 @@ select:focus>option:checked {
 	}
 
 	#userInputButton {
-		height: 1.6em;
-		width: 1.6em;
+		height: 2em;
+		width: 2em;
 	}
 
 	.randomText{

@@ -233,13 +233,13 @@ let input = document.getElementById("inputBox");
 let enterInput = document.getElementById("userInputButton");
 
 showInput.addEventListener("click", () => {
-    input.hidden = false;
+    input.hidden = !input.hidden;
     showInput.style.display = "none";
     // console.log("button is clicked!");
 })
 
 enterInput.addEventListener("click", () => {
-    input.hidden = true;
+    input.hidden = !input.hidden;
     showInput.style.display = "block";
 })
 
