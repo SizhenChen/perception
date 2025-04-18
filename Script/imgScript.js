@@ -165,21 +165,21 @@ document.querySelectorAll("img").forEach(img => {
         // Clone the clicked image instead of moving it
         const clonedImg = this.cloneNode(true);
 
-        // if (window.innerWidth < 500) {
-        //     clonedImg.style.width = "65vw";
-        // } else {
-        //     clonedImg.style.width = "28vw";
-        // }
+        if (window.innerWidth < 500) {
+            clonedImg.style.width = "65vw";
+        } else {
+            clonedImg.style.width = "28vw";
+        }
 
-        // window.addEventListener('resize', () => {
-        //     if (window.innerWidth < 500) {
-        //         clonedImg.style.width = "65vw";
-        //     } else {
-        //         clonedImg.style.width = "28vw";
-        //     }
-        // });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 500) {
+                clonedImg.style.width = "65vw";
+            } else {
+                clonedImg.style.width = "28vw";
+            }
+        });
 
-        clonedImg.style.width = "28vw";
+        // clonedImg.style.width = "28vw";
 
         // Append the cloned image inside descriptionDiv
         descriptionDiv.appendChild(clonedImg);
