@@ -167,7 +167,7 @@ document.querySelectorAll("img").forEach(img => {
 
         if (window.innerWidth < 500) {
             clonedImg.style.width = "65vw";
-        }else{
+        } else {
             clonedImg.style.width = "28vw";
         }
 
@@ -184,10 +184,10 @@ document.getElementById("closeImgDescription").addEventListener("click", functio
     document.getElementById("descriptionDiv").style.display = "none";
 });
 
-function screenChange(){
+function screenChange() {
     if (window.innerWidth < 500) {
         document.querySelector("#about").innerHTML = "P";
-    }else{
+    } else {
         document.querySelector("#about").innerHTML = "PERCEPTION";
     }
 }
