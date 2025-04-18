@@ -411,13 +411,15 @@ select:focus>option:checked {
 		margin: 0;
 	}
 
+	#botsMenu{
+		align-items:baseline;
+		padding-top: 24em;
+	}
+
 	#bots {
         text-align-last: center;
-        /* aligns selected item in dropdown */
         text-align: center;
-        /* for fallback */
         direction: ltr;
-        /* prevents quirks in some Android devices */
 	}
 
 	#about {
