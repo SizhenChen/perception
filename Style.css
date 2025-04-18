@@ -410,7 +410,7 @@ select:focus>option:checked {
 		content: "";
 		position: fixed;
 		left: 50%;
-		bottom: 110px;
+		bottom: 100px;
 		top: auto;
 		width: 0;
 		border: 20px solid transparent;
@@ -435,6 +435,6 @@ select:focus>option:checked {
 	}
 
 	#infoContainer {
-		top: 1.5em;
+		top: 1.7em;
 	}
 }
