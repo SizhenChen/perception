@@ -247,6 +247,12 @@ function screenChange(){
     }else{
         input.hidden = false;
     }
+
+    if (window.innerWidth < 500) {
+        document.querySelector("#about").innerHTML = "P";
+    }else{
+        document.querySelector("#about").innerHTML = "PERCEPTION";
+    }
 }
 
 window.addEventListener("resize",()=>{

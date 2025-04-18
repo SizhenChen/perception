@@ -214,6 +214,10 @@ body {
 	color: #ffffff;
 }
 
+#showInputBox{
+	background-color: #000000;
+}
+
 #botContainer {
 	width: 99vw;
 	position: fixed;
@@ -345,10 +349,6 @@ select:focus>option:checked {
 	background-color: #9e9e9e;
 }
 
-#showInputBox{
-	background-color: #000000;
-}
-
 @media only screen and (max-width: 500px) {
 	#showInputBox{
 		background-color: #000000;
@@ -418,4 +418,15 @@ select:focus>option:checked {
 		border-left: 40px;
 		margin: 0;
 	}
+
+	#about {
+		padding: 4px 12px;
+        font-family: SpaceMonoBold, monospace, sans-serif;
+        font-size: 16px;
+	}
+
+	#about:active {
+        background: #606060;
+        color: rgb(255, 255, 255);
+    }
 }
