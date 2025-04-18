@@ -103,9 +103,6 @@ body {
         font-size: 16px;
         height: 60vh;
         align-items: first baseline;
-        overflow-x: hidden;
-        overflow-y: auto;
-        scroll-snap-type: y mandatory;
     }
 
     #imgIndex {
