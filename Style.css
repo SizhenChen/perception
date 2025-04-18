@@ -402,7 +402,7 @@ select:focus>option:checked {
 		content: "";
 		position: fixed;
 		left: 50%;
-		bottom: 100px;
+		bottom: 90px;
 		top: auto;
 		width: 0;
 		border: 20px solid transparent;
