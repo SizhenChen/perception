@@ -453,4 +453,9 @@ select:focus>option:checked {
 		transition: background 0.3s;
 		font-family: SpaceMono, monospace, sans-serif;
 	}
+
+	#userInputButton {
+		height: 1.6em;
+		width: 1.6em;
+	}
 }
