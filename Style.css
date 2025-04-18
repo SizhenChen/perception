@@ -463,4 +463,8 @@ select:focus>option:checked {
 		height: 1.6em;
 		width: 1.6em;
 	}
+
+	.randomText{
+		max-width: 50vw;
+	}
 }
